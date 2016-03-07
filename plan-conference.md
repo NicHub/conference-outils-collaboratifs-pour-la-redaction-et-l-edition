@@ -1,5 +1,5 @@
 
-![](http://pyrochat.github.io/mooc-led/statiques/images/vignette.jpg)
+![](LogoMC3b.png)
 
 **OUTILS COLLABORATIFS POUR LA RÉDACTION ET L’ÉDITION**
 ========================================
@@ -7,9 +7,20 @@
 **Plan de la conférence**
 ========================================
 
-
+---
 
 # Fil rouge : Présentation des points abordés
+
+## Chaîne éditoriale
+
+- Édition des textes en Markdown pour les cours
+- Édition des textes en Markdown + HTML pour les dias
+- Génération des PDF pour les cours et les dias
+- Mise en ligne sur GitHub
+- Corrections
+- Pull request
+- Intégration des corrections
+
 
 ## Contexte
 
@@ -24,8 +35,8 @@
 	- HTML
 	- Markdown
 
-
----
+<!--
+## Pour mémoire, ce que j’ai transmis au Microclub
 
 - Collaboration ⇒ Git et GitHub
 - Hébergement du site web ⇒ GitHub
@@ -33,11 +44,12 @@
 - Génération des HTML ⇒ Pandoc + CSS
 - Génération des PDF ⇒ WeasyPrint + Prince
 - Automatisation des générations ⇒ Python + Bash
-
+-->
 
 ---
 
-# Collaboration ⇒ Git et GitHub
+**Collaboration ⇒ Git et GitHub**
+==================================
 
 ## Git
 
@@ -74,13 +86,44 @@
 	- Facilité de clonage
 
 - Quand ne pas choisir GitHub ?
-	- Basé aux USA
+	- Fichiers sensibles qui doivent rester dans l’entreprise ou sur le territoire
 	- Fichiers volumineux
+	- Fichiers binaires
+	-
 	- Si on est allergique à la ligne de commande
+
+## Exemples de commandes Git
+
+- Création d’un dépôt local
+- Création de la branche “gh-pages”
+...
+
+## Création d’un dépôt sur GitHub
+
+...
+
+## Création d’une Pull Request
+
+...
+
+## Création d’un site web sur GitHub
+
+- Branche “gh-pages”
+- CNAME
+	- Problème de confusion de noms de domaine lors de *Fork*
+
+...
+
+## Organisation des répertoires et des fichiers
+
+...
+
+
 
 ---
 
-# Langages de balisage
+**Langages de balisage**
+========================
 
 Un language de balisage enrichit l’information textuelle brute d’une information sémantique.
 
@@ -96,13 +139,13 @@ Un language de balisage enrichit l’information textuelle brute d’une informa
 - SGML (ancêtre du HTML)
 - HTML
 - XHTML
-- XML (DocBook)
+- XML (DocBook, SVG)
 - TeX/LaTeX
 
 ## Langage de balisage léger
 
 - Markdown
-- Pandoc flavored Markdown (PFM)
+- Pandoc Flavored Markdown (PFM) / Pandoc’s extended Markdown
 - GitHub Flavored Markdown (GFM)
 - MultiMarkdown
 - Markdown Extra
@@ -122,6 +165,7 @@ Un language de balisage enrichit l’information textuelle brute d’une informa
 	- résilients à l’obsolescence informatique
 - Facile d’écrire des scripts pour automatiser les tâches récurrentes
 - Nombreuses solutions logicielles
+- Nombreux formats de sortie à partir d’une source unique
 
 ## Désavantages des langages de balisage
 
@@ -133,12 +177,40 @@ Un language de balisage enrichit l’information textuelle brute d’une informa
 	- HTML ⇒ DOCTYPE : HTML 5, HTML 4.01 Strict, HTML 4.01 Transitional...
 - Nombreux jeu de caractères codés (utf-8, Windows-1256,...). Moins problématique aujourd’hui puisque l’UTF-8 s’est imposé ([86% des sites internet l’utilise][3])
 - Nécessitent souvent l’apprentissage de plusieurs vocabulaires (Markdown + HTML + CSS)
+- Seul LaTeX est excellent pour le rendu des équations mathématiques. Il existe des solutions pour les autres langages, mais elles n’offrent pas l’assurance de pouvoir mettre en forme n’importe quels types d’équation.
+
+## Normes Markdown
+
+- [Norme de base](http://daringfireball.net/projects/markdown/)
+- [GitHub Flavored Markdown (GFM)](https://help.github.com/categories/writing-on-github/)
+- [EPFL-ENAC-IT — Jean-Daniel Bonjour](http://enacit1.epfl.ch/markdown-pandoc/)
+
+## Bases du Markdown
+
+...
+
+## Pandoc’s extended Markdown
+
+...
+
+
+## Normes HTML
+
+- W3C
+- W3School
+- Mozilla
+
+## Bases du HTML + CSS
+
+...
+
 
 ---
 
-# Les outils
+**LES OUTILS**
+==============
 
-# Markdown
+## Édition Markdown
 
 N’importe quel éditeur de texte supportant l’UTF-8 fera l’affaire
 
@@ -150,36 +222,125 @@ N’importe quel éditeur de texte supportant l’UTF-8 fera l’affaire
 - nano
 - vi
 
-# Conversion Markdown en HTML
+## Édition dessins SVG
 
-- Pandoc
+- Inkscape
+...
+
+## Conversion Markdown en HTML
+
+- Pandoc (conversion d’une multitude de formats)
 - Multimarkdown
 
 
+## Utilisation de Pandoc
+
+<http://pandoc.org/>
+
+Permet de convertir d’un format vers un autre
+
+...
 
 
+## Conversion HTML en PDF
+
+- Prince
+- WeasyPrint
+
+## Utilisation de Prince
+
+...
+
+## Utilisation de WeasyPrint
+
+...
+
+## Comparaison Prince — WeasyPrint
+
+...
 
 
+## Scripts Python + Bash
 
+...
 
+## Pre-dia
 
-
+...
 
 
 ---
 
-# Boite à idées
+**MISE EN FORME**
+=================
+
+## Normes typographiques
+
+- Les apostrophes
+- Les espaces insécables
+
+## Format HTML
+
+...
+
+## Format PDF pour les cours individuels
+
+...
+
+## Format PDF pour les dias
+
+...
+
+## Futur ⇒ Format PDF pour impression livre
+
+...
+
+## Futur ⇒ Format ePub ou Kindle
+
+...
+
+
+---
+
+**PERSPECTIVES**
+========================
+
+- Interaction des étudiants sur GitHub
+- Livre électronique au format HTML comme sur GitBook
+- Édition papier ⇒ PPUR ou auto-édition
+
+
+---
+
+**Boite à idées**
+=================
 
 - [GitBook](https://www.gitbook.com/)
 - [Leanpub](https://leanpub.com/)
-
-
+- [Ukelele](http://scripts.sil.org/cms/scripts/page.php?site_id=nrsi&id=ukelele)
+- [DTerm](http://decimus.net/dterm)
+- [Sublime Text](http://sublimetext.com/)
+- [Atom](https://atom.io/)
+- [Marked 2](http://marked2app.com/)
+- [pdf2htmlEX](https://github.com/coolwanglu/pdf2htmlEX)
+- [poppler — pdftohtml](http://poppler.freedesktop.org)
 
 mars 2016, [Nicolas Jeanmonod](nicolas.jeanmonod@gmail.com)
+
+---
+
+# 2016-03-07 — Discussion avec PYR
+
+- Validation plan
+- utilisation de [Shower](http://shwr.me/)
+- [Template HTML5][4] pour menu comme sur [le site d’Atlassian][1]
+- SVG vs PNG
+
 
 ---
 
 [1]: https://www.atlassian.com/git/tutorials/comparing-workflows/forking-workflow
 [2]: https://en.wikipedia.org/wiki/List_of_version_control_software
 [3]: https://fr.wikipedia.org/wiki/UTF-8
+[4]: http://pandoc.org/README.html#templates
 
