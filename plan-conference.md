@@ -130,7 +130,7 @@ Un language de balisage enrichit l’information textuelle brute d’une informa
 ## Comparaison processus WYSIWY**M** vs WYSIWY**G**
 
 | WORD             | HTML                                  | Markdown         |
-| --               | --                                    | --               |
+| ---              | ---                                   | ---              |
 | écrire un parag. | &lt;p>écrire un parag.&lt;/p>         | écrire un parag. |
 | • liste 1        | &lt;ul>&lt;li>liste 1&lt;/li>&lt;/ul> | - liste 1        |
 
