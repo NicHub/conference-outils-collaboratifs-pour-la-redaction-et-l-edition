@@ -1,6 +1,4 @@
 
-![](statiques/images/epfl-logo-pp.png){ width=15% }
-
 **CONFÉRENCE**
 ===
 
