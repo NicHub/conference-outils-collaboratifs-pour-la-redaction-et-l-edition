@@ -88,7 +88,7 @@ sup.align {
 	font-weight: 100;
 	font-size: 11pt;
 	size: A4;
-	margin: 1.75cm 1.5cm 3cm;
+	margin: 1.5cm 1.5cm 4.8cm;
 	@bottom-left-corner {
 	    content: url(images/LogoMC3b-transparent.png);
 		opacity: 0.5;
