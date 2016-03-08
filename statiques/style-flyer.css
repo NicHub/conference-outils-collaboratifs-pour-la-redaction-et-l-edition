@@ -1,0 +1,96 @@
+@charset "utf-8";
+
+@import url(http://fonts.googleapis.com/css?family=Ubuntu+Mono:400,700,400italic,700italic|Ubuntu:300,400,500,700,300italic,400italic,500italic,700italic|Ubuntu+Condensed&subset=greek-ext);
+
+body
+{
+	font-family: Ubuntu;
+	font-size: 11pt;
+}
+h1, h2, h3, h4, h5, h6
+{
+	page-break-after: avoid;
+	font-weight: 500;
+}
+div.figure
+{
+	page-break-inside: avoid;
+	width: 100%;
+	text-align: center;
+	padding: 20px 0 0;
+}
+h1
+{
+	font-family: "Ubuntu Condensed";
+	font-size: 300%;
+	font-weight: 600;
+	text-transform: uppercase;
+	margin: 10px 0;
+	padding: 0;
+	text-align: center;
+	line-height: 120%;
+	word-spacing: 0.02em;
+	letter-spacing: -0.03em;
+}
+h2
+{
+	font-variant: small-caps;
+	margin: 20px 0 2px;
+}
+p
+{
+	margin: 0.2em 0 0.2em;
+	line-height: 1.4em;
+	text-align: justify;
+	hyphens: auto;
+}
+ul
+{
+	margin: 0.4em 0 0;
+	padding: 0;
+	list-style-type: none;
+	column-count: 2;
+	column-gap: 2em;
+}
+li
+{
+	margin: 0.5em 1em 0;
+	padding: 0;
+	text-indent: 0;
+}
+li:before
+{
+	content: "–";
+	margin: 0 0 0 -1em;
+	padding: 0;
+	display: inline-block;
+	width: 1em;
+}
+.footnote, sup, sub
+{
+	height: 0;
+	line-height: 1;
+	vertical-align: baseline;
+	position: relative;
+	font-size: 0.65em;
+}
+sub { top: 0.5ex; }
+.footnote, sup { bottom: 1ex; }
+
+sup.align {
+	width: 1.5em;
+	display: inline-table;
+	text-align: left;
+}
+@page
+{
+	font-family: "Ubuntu";
+	font-weight: 100;
+	font-size: 11pt;
+	size: A4;
+	margin: 0.5cm 1.5cm 3cm;
+	@bottom-left-corner {
+	    content: url(images/LogoMC3b-transparent.png);
+		opacity: 0.5;
+	}
+}

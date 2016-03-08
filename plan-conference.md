@@ -336,6 +336,17 @@ mars 2016, [Nicolas Jeanmonod](nicolas.jeanmonod@gmail.com)
 - [Template HTML5][4] pour menu comme sur [le site d’Atlassian][1]
 - SVG vs PNG
 
+- Open Sankore ⇒ logiciel MOOC ⇒ Impose PDF
+- Wandida ⇒ 20 sujets Rachid ⇒ Quelques vidéo
+- MOOC µcontrôleurs syst méca
+- EDX, kanacademy
+
+- Mode slide invisible (pour faire des notes)
+
+- flyer info une page A4
+
+
+
 
 ---
 
