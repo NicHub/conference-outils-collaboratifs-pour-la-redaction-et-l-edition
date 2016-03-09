@@ -74,6 +74,8 @@
 - Pourquoi Git est franchement pas bon ?
 	- L’interface utilisateur est inutilement complexe. Aucune commande ne peut être déduite par la logique. Les noms des commandes sont troublants (par ex. `git blame` pour voir qui a fait quoi sur un fichier.)
 	- La gestion des fichiers volumineux est une option (GLFS Git Large File Storage)
+	- Fichiers binaires
+	- Il n’existe que des GUI qui n’aiderons pas les gens allergiques à la ligne de commande. ⇒ difficile à utiliser par des non-techniciens
 
 ## GitHub
 
@@ -87,10 +89,16 @@
 
 - Quand ne pas choisir GitHub ?
 	- Fichiers sensibles qui doivent rester dans l’entreprise ou sur le territoire
-	- Fichiers volumineux
-	- Fichiers binaires
-	-
-	- Si on est allergique à la ligne de commande
+	- Sinon même limitations que Git
+
+- Avantages des sites web hébergés sur GitHub
+	- gratuits
+	- bande passante OK
+
+- Limitations des sites web hébergés sur GitHub
+	- uniquement statiques (pas de scripts côté serveur)
+	- pas de possibilité d’utiliser des branches différentes
+	- gestion du CNAME difficile quand on “forke”
 
 ## Exemples de commandes Git
 
@@ -125,7 +133,7 @@
 **Langages de balisage**
 ========================
 
-Un language de balisage enrichit l’information textuelle brute d’une information sémantique.
+Un langage de balisage enrichit l’information textuelle brute d’une information sémantique.
 
 ## Comparaison processus WYSIWY**M** vs WYSIWY**G**
 
@@ -324,6 +332,8 @@ Permet de convertir d’un format vers un autre
 - [Marked 2](http://marked2app.com/)
 - [pdf2htmlEX](https://github.com/coolwanglu/pdf2htmlEX)
 - [poppler — pdftohtml](http://poppler.freedesktop.org)
+
+Résolution diapositives proposée par Rémy 1024 x 768
 
 mars 2016, [Nicolas Jeanmonod](nicolas.jeanmonod@gmail.com)
 
