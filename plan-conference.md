@@ -1,5 +1,4 @@
 
-![](LogoMC3b.png)
 
 **OUTILS COLLABORATIFS POUR LA RÉDACTION ET L’ÉDITION**
 ========================================
@@ -8,6 +7,21 @@
 ========================================
 
 ---
+
+Fichiers ouverts dans Sublime Text
+
+subl /Users/nico/Documents/programmation/epfl_mooc_led/mooc-led/cours/502/timers.md
+
+
+Salutations
+Remerciements
+historique
+- Cours microcontroleurs
+- Connaissance de PYR et JDN
+- Microclub
+-
+
+
 
 # Fil rouge : Présentation des points abordés
 
@@ -48,8 +62,93 @@
 
 ---
 
-**Collaboration ⇒ Git et GitHub**
-==================================
+# **Langages de balisage**
+==========================
+
+Un langage de balisage enrichit l’information textuelle brute d’une information sémantique.
+
+## Comparaison processus WYSIWY**M** vs WYSIWY**G**
+
+| WORD             | HTML                                  | Markdown         |
+| ---              | ---                                   | ---              |
+| écrire un parag. | &lt;p>écrire un parag.&lt;/p>         | écrire un parag. |
+| • liste 1        | &lt;ul>&lt;li>liste 1&lt;/li>&lt;/ul> | - liste 1        |
+
+## Exemples
+
+- SGML (ancêtre du HTML)
+- HTML
+- XHTML
+- XML (DocBook, SVG)
+- TeX/LaTeX
+
+## Langages de balisage légers
+
+- Markdown
+- Pandoc Flavored Markdown (PFM) / Pandoc’s extended Markdown
+- GitHub Flavored Markdown (GFM)
+- MultiMarkdown
+- Markdown Extra
+- Textile
+- Asciidoc
+- reStructuredText
+- kramdown
+- Fountain
+
+## Avantages des langages de balisage
+
+- Séparation sémantique/visuel
+- Basés sur des fichiers textes
+	- éditables avec des éditeurs simples
+	- faciles à comparer
+	- faciles à gérer avec des logiciels SCM (Git,...)
+	- résilients à l’obsolescence informatique
+- Facile d’écrire des scripts pour automatiser les tâches récurrentes
+- Nombreuses solutions logicielles
+- Nombreux formats de sortie à partir d’une source unique
+
+## Désavantages des langages de balisage
+
+- Difficiles d’accès aux non-techniciens
+- Trop complexes pour être édités directement (HTML)
+- Beaucoup de choix tue le choix
+- Trop nombreuses versions d’un même vocabulaire
+	- Markdown ⇒ PFM, GFM,...
+	- HTML ⇒ DOCTYPE : HTML 5, HTML 4.01 Strict, HTML 4.01 Transitional...
+- Nombreux jeu de caractères codés (utf-8, Windows-1256,...). Moins problématique aujourd’hui puisque l’UTF-8 s’est imposé ([86% des sites internet l’utilise][3])
+- Nécessitent souvent l’apprentissage de plusieurs vocabulaires (Markdown + HTML + CSS)
+- Seul LaTeX est excellent pour le rendu des équations mathématiques. Il existe des solutions pour les autres langages, mais elles n’offrent pas l’assurance de pouvoir mettre en forme n’importe quels types d’équation.
+
+## Normes Markdown
+
+- [Norme de base](http://daringfireball.net/projects/markdown/)
+- [GitHub Flavored Markdown (GFM)](https://help.github.com/categories/writing-on-github/)
+- [EPFL-ENAC-IT — Jean-Daniel Bonjour](http://enacit1.epfl.ch/markdown-pandoc/)
+
+## Bases du Markdown
+
+...
+
+## Pandoc’s extended Markdown
+
+...
+
+
+## Normes HTML
+
+- W3C
+- W3School
+- Mozilla
+
+## Bases du HTML + CSS
+
+...
+
+
+---
+
+# **Collaboration ⇒ Git et GitHub**
+====================================
 
 ## Git
 
@@ -130,93 +229,8 @@
 
 ---
 
-**Langages de balisage**
-========================
-
-Un langage de balisage enrichit l’information textuelle brute d’une information sémantique.
-
-## Comparaison processus WYSIWY**M** vs WYSIWY**G**
-
-| WORD             | HTML                                  | Markdown         |
-| ---              | ---                                   | ---              |
-| écrire un parag. | &lt;p>écrire un parag.&lt;/p>         | écrire un parag. |
-| • liste 1        | &lt;ul>&lt;li>liste 1&lt;/li>&lt;/ul> | - liste 1        |
-
-## Exemples
-
-- SGML (ancêtre du HTML)
-- HTML
-- XHTML
-- XML (DocBook, SVG)
-- TeX/LaTeX
-
-## Langage de balisage léger
-
-- Markdown
-- Pandoc Flavored Markdown (PFM) / Pandoc’s extended Markdown
-- GitHub Flavored Markdown (GFM)
-- MultiMarkdown
-- Markdown Extra
-- Textile
-- Asciidoc
-- reStructuredText
-- kramdown
-- Fountain
-
-## Avantages des langages de balisage
-
-- Séparation sémantique/visuel
-- Basés sur des fichiers textes
-	- éditables avec des éditeurs simples
-	- faciles à comparer
-	- faciles à gérer avec des logiciels SCM (Git,...)
-	- résilients à l’obsolescence informatique
-- Facile d’écrire des scripts pour automatiser les tâches récurrentes
-- Nombreuses solutions logicielles
-- Nombreux formats de sortie à partir d’une source unique
-
-## Désavantages des langages de balisage
-
-- Difficiles d’accès aux non-techniciens
-- Trop complexes pour être édités directement (HTML)
-- Beaucoup de choix tue le choix
-- Trop nombreuses versions d’un même vocabulaire
-	- Markdown ⇒ PFM, GFM,...
-	- HTML ⇒ DOCTYPE : HTML 5, HTML 4.01 Strict, HTML 4.01 Transitional...
-- Nombreux jeu de caractères codés (utf-8, Windows-1256,...). Moins problématique aujourd’hui puisque l’UTF-8 s’est imposé ([86% des sites internet l’utilise][3])
-- Nécessitent souvent l’apprentissage de plusieurs vocabulaires (Markdown + HTML + CSS)
-- Seul LaTeX est excellent pour le rendu des équations mathématiques. Il existe des solutions pour les autres langages, mais elles n’offrent pas l’assurance de pouvoir mettre en forme n’importe quels types d’équation.
-
-## Normes Markdown
-
-- [Norme de base](http://daringfireball.net/projects/markdown/)
-- [GitHub Flavored Markdown (GFM)](https://help.github.com/categories/writing-on-github/)
-- [EPFL-ENAC-IT — Jean-Daniel Bonjour](http://enacit1.epfl.ch/markdown-pandoc/)
-
-## Bases du Markdown
-
-...
-
-## Pandoc’s extended Markdown
-
-...
-
-
-## Normes HTML
-
-- W3C
-- W3School
-- Mozilla
-
-## Bases du HTML + CSS
-
-...
-
-
----
-
-**LES OUTILS**
-==============
+# **LES OUTILS**
+================
 
 ## Édition Markdown
 
@@ -279,8 +293,8 @@ Permet de convertir d’un format vers un autre
 
 ---
 
-**MISE EN FORME**
-=================
+# **MISE EN FORME**
+===================
 
 ## Normes typographiques
 
@@ -310,8 +324,8 @@ Permet de convertir d’un format vers un autre
 
 ---
 
-**PERSPECTIVES**
-========================
+# **PERSPECTIVES**
+==================
 
 - Interaction des étudiants sur GitHub
 - Livre électronique au format HTML comme sur GitBook
@@ -320,8 +334,8 @@ Permet de convertir d’un format vers un autre
 
 ---
 
-**Boite à idées**
-=================
+# **Boite à idées**
+===================
 
 - [GitBook](https://www.gitbook.com/)
 - [Leanpub](https://leanpub.com/)
