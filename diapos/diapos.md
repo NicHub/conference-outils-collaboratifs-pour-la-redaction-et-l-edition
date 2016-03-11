@@ -107,7 +107,6 @@
 ![](./images/github-pyr-site-web.png){ height=30cm }
 
 </div>
-
 </section>
 
 
@@ -257,9 +256,9 @@ Un langage de balisage enrichit l’information textuelle brute d’une informat
 <!--  3456789 -->- Trop complexes pour être édités directement (HTML)
 <!--   456789 -->- Beaucoup de choix tue le choix
 <!--    56789 -->- Trop nombreuses versions d’un même vocabulaire
-<!--     6789 -->	- Markdown ⇒ PFM, GFM,...
-<!--     6789 -->	- HTML ⇒ DOCTYPE : HTML 5, HTML 4.01 Strict, HTML 4.01 Transitional...
-
+<!--    56789 -->	- Markdown ⇒ PFM, GFM,...
+<!--    56789 -->	- HTML ⇒ DOCTYPE : HTML 5, HTML 4.01 Strict, HTML 4.01 Transitional...
+<!--     6789 -->- Incompatibilité des agents utilisateurs (IE6...)
 </div>
 
 <div style="font-size:48pt; left:34cm; width:25.0cm; top:6cm; column-count: 1">
@@ -336,7 +335,7 @@ Un langage de balisage enrichit l’information textuelle brute d’une informat
 	Syntaxe _alternative_ pour niveau 2
 	-----------------------------------
 
-	### Titre de niveau 3 incluant [un lien](#)
+	### Titre de niveau 3 incluant [un lien](http://example.com/)
 
 	#### Titre de niveau 4
 
@@ -408,10 +407,10 @@ Un langage de balisage enrichit l’information textuelle brute d’une informat
 # Pandoc Flavored Markdown (PFM){ class="en_tete" }
 <div style="font-size:48pt; left:5cm; width:50.0cm; top:7cm; column-count: 1">
 
-Aussi appelé Pandoc’s extended Markdown
+Le PFM est aussi appelé *“Pandoc’s extended Markdown”*
 
 - Supporte les retours à ligne `<br/>` en ajoutant un “` \`” en fin de ligne
-- Peut ajouter des attribut HTML : `# Exemple{ attribut=10cm }`
+- Peut ajouter des attribut HTML : `# Exemple{ attribut="10cm" }`
 
 ## Pour les détails 
 
@@ -462,7 +461,7 @@ Aussi appelé Pandoc’s extended Markdown
 <section>
 <!-- A -->
 # Exemple de conversion avec Pandoc{ class="en_tete" }
-<div style="font-size:40pt; left:1cm; width:50.0cm; top:4.5cm; column-count: 1">
+<div style="font-size:40pt; left:15cm; width:50.0cm; top:4.5cm; column-count: 1">
 
 ![](./images/exemple-conversion-pandoc-html.png){ height=30cm }
 
@@ -507,6 +506,100 @@ Aussi appelé Pandoc’s extended Markdown
 
 </div>
 </section>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+<section>
+<!-- A -->
+# Conversion HTML – PDF avec Prince [princexml.com](http://www.princexml.com/) { class="en_tete" }
+<div style="font-size:40pt; left:5cm; width:30.0cm; top:4.5cm; column-count: 1">
+
+## Avantages
+
+- [Résultats magnifiques][6]
+- Supporte de nombreuses possibilités des CSS
+- Peut exécuter des JavaScript lors de la génération
+- Très rapide
+
+## Désavantages
+
+- Coûteux (495$)
+- Pas utilisable tel quel par les non-techniciens car uniquement en ligne de commande
+
+</div>
+
+<div style="font-size:40pt; left:34cm; width:30.0cm; top:4.5cm; column-count: 1">
+
+## Utilisation
+
+	prince            \
+		input.html    \
+		-o output.pdf
+
+</div>
+</section>
+
+
+
+
+<section>
+<!-- A -->
+# Conversion HTML – PDF avec WeasyPrint [weasyprint.org](http://weasyprint.org) { class="en_tete" }
+<div style="font-size:40pt; left:5cm; width:30.0cm; top:4.5cm; column-count: 1">
+
+## Avantages
+
+- Gratuit (licence BSD)
+
+## Désavantages
+
+- Résultats parfois imprévisibles
+- Ne supporte pas autant de possibilités CSS que Prince
+- Pas de JavaScript lors de la génération
+- Très lent
+- Pas utilisable tel quel par les non-techniciens car uniquement en ligne de commande
+- Potentiellement infernal à installer
+
+</div>
+
+<div style="font-size:40pt; left:34cm; width:30.0cm; top:4.5cm; column-count: 1">
+
+## Utilisation
+
+	weasyprint     \
+		input.html \
+		output.pdf
+
+</div>
+</section>
+
+
+
+
+
+
+
+<section>
+<!-- A -->
+# Exemple de conversion avec Prince{ class="en_tete" }
+<div style="font-size:40pt; left:18cm; width:50.0cm; top:5cm; column-count: 1">
+
+![](./images/exemple-conversion-pandoc-pdf-prince.png){ height=30cm }
+
+</div>
+</section>
+
 
 
 
@@ -594,7 +687,7 @@ Aussi appelé Pandoc’s extended Markdown
 
 <!-- 2345678 -->- Gratuit
 <!--  345678 -->- Pas de limite sur le nombre de dépôts
-<!--   45678 -->- Possibilité de site web (autant qu’on veut ?)
+<!--   45678 -->- Possibilité de site web (autant qu’on veut à priori)
 <!--    5678 -->- Bande passante OK
 <!--     678 -->- Diff visuelles
 <!--      78 -->- Projet public = publicité gratuite
@@ -617,9 +710,9 @@ Aussi appelé Pandoc’s extended Markdown
 <!--    45678 -->- Sinon même limitations que Git
 
 <!--     5678 -->## Inconvénients des sites web
-<!--      678 -->- uniquement statiques (pas de scripts côté serveur)
-<!--       78 -->- pas de possibilité d’utiliser des branches différentes (gh-pages ou master uniquement)
-<!--        8 -->- gestion du [CNAME][5] difficile quand on “forke”
+<!--      678 -->- Uniquement statiques (pas de scripts côté serveur)
+<!--       78 -->- Pas de possibilité d’utiliser des branches différentes (gh-pages ou master uniquement)
+<!--        8 -->- Gestion du [CNAME][5] difficile quand on “forke”
 
 </div>
 </section>
@@ -643,7 +736,6 @@ Aussi appelé Pandoc’s extended Markdown
 ![](./images/github-pyr-site-web.png){ height=30cm }
 
 </div>
-
 </section>
 
 
@@ -652,19 +744,32 @@ Aussi appelé Pandoc’s extended Markdown
 <section>
 <!-- A -->
 # GitHub – flux de travail{ class="en_tete" }
-<div style="font-size:48pt; left:5cm; width:50.0cm; top:4.5cm; column-count: 1">
+<div style="font-size:48pt; left:5cm; width:50.0cm; top:6cm; column-count: 1">
 
 # [Forking Workflow][1]
+</div>
+
+<div style="font-size:48pt; left:5cm; width:30.0cm; top:9cm; column-count: 1">
 
 - Le responsable de projet
 	- crée un dépot sur GitHub
 	- le clone sur un ordi
 	- crée la branche “gh-pages”
 	- défini cette branche comme défaut
-	- “push” les fichiers
+	- “add+commit+push” les fichiers
+	- accepte ou refuse les “pull request”
+
+</div>
+
+<div style="font-size:48pt; left:30cm; width:30.0cm; top:9cm; column-count: 1">
 
 - Les collaborateurs
-	- clonent le dépôt
+	- clonent le dépôt du responsable (optionnel)
+	- “fork” le dépôt et clonent le “fork” sur un ordi
+	- modifient ou ajoutent des fichiers
+	- “add+commit+push” les fichiers vers leur “fork”
+	- envoient des “pull request” au reponsable pour qu’il intègre les modifications
+	- synchronisent leurs “fork”
 
 </div>
 </section>
@@ -684,6 +789,7 @@ Aussi appelé Pandoc’s extended Markdown
 [3]: https://fr.wikipedia.org/wiki/UTF-8
 [4]: http://pandoc.org/README.html#templates
 [5]: https://github.com/NicHub/ouilogique.com/blob/gh-pages/CNAME
+[6]: http://www.princexml.com/howcome/2009/aquarist/AdvancedAquarist-2009-01.pdf
 
 </section>
 
