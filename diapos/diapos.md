@@ -882,11 +882,3 @@ Le PFM est aussi appelé *“Pandoc’s extended Markdown”*
 </section>
 
 
-<section>
-<!-- A -->
-# Canvas{ class="en_tete" }
-<div style="font-size:48pt; left:5cm; width:50.0cm; top:7cm; column-count: 1">
-
-
-</div>
-</section>
