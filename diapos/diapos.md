@@ -28,7 +28,7 @@
 <!-- def A -->**Outils collaboratifs pour la rédaction et l’édition**
 <!-- def A --></div>
 <!-- A -->
-<div style="font-size:48pt; left:5cm; width:35.0cm; top:8cm;">
+<div style="font-size:48pt; left:5cm; width:35.0cm; top:5cm;">
 ## Chaîne éditoriale
 <!-- 2345678 -->- Édition des textes en Markdown pour les cours
 <!--  345678 -->- Édition des textes en Markdown + HTML pour les dias
@@ -53,7 +53,7 @@
 <section>
 <!-- A -->
 # <span style="color: #e2001a;">Fil rouge</span> Présentation des points abordés{ class="en_tete" }
-<div style="font-size:48pt; left:5cm; width:50.0cm; top:7cm;">
+<div style="font-size:48pt; left:5cm; width:50.0cm; top:4cm;">
 
 <!-- 234 -->## Contexte
 <!-- 234 -->- MOOC LED de Pierre-Yves Rochat (<http://pyrochat.github.io/mooc-led/>)
@@ -97,12 +97,12 @@
 <section>
 <!-- A -->
 # GitHub.com et GitHub.io{ class="en_tete" }
-<div style="font-size:40pt; left:2cm; width:30.0cm; top:5cm; column-count: 1">
+<div style="font-size:48pt; left:2cm; width:30.0cm; top:5cm; column-count: 1">
 
 ![](./images/github-pyr-depot.png){ height=30cm }
 
 </div>
-<div style="font-size:40pt; left:31cm; width:30.0cm; top:5cm; column-count: 1">
+<div style="font-size:48pt; left:31cm; width:30.0cm; top:5cm; column-count: 1">
 
 ![](./images/github-pyr-site-web.png){ height=30cm }
 
@@ -251,17 +251,22 @@ Un langage de balisage enrichit l’information textuelle brute d’une informat
 <section>
 <!-- A -->
 # Désavantages des langages de balisage{ class="en_tete" }
-<div style="font-size:48pt; left:5cm; width:50.0cm; top:6cm; column-count: 2">
+<div style="font-size:48pt; left:5cm; width:25.0cm; top:6cm; column-count: 1">
 
-- Difficiles d’accès aux non-techniciens
-- Trop complexes pour être édités directement (HTML)
-- Beaucoup de choix tue le choix
-- Trop nombreuses versions d’un même vocabulaire
-	- Markdown ⇒ PFM, GFM,...
-	- HTML ⇒ DOCTYPE : HTML 5, HTML 4.01 Strict, HTML 4.01 Transitional...
-- Nombreux jeu de caractères codés (utf-8, Windows-1256,...). Moins problématique aujourd’hui puisque l’UTF-8 s’est imposé ([86% des sites internet l’utilise][3])
-- Nécessitent souvent l’apprentissage de plusieurs vocabulaires (Markdown + HTML + CSS)
-- Seul LaTeX est excellent pour le rendu des équations mathématiques. Il existe des solutions pour les autres langages, mais elles n’offrent pas l’assurance de pouvoir mettre en forme n’importe quels types d’équation.
+<!-- 23456789 -->- Difficiles d’accès aux non-techniciens
+<!--  3456789 -->- Trop complexes pour être édités directement (HTML)
+<!--   456789 -->- Beaucoup de choix tue le choix
+<!--    56789 -->- Trop nombreuses versions d’un même vocabulaire
+<!--     6789 -->	- Markdown ⇒ PFM, GFM,...
+<!--     6789 -->	- HTML ⇒ DOCTYPE : HTML 5, HTML 4.01 Strict, HTML 4.01 Transitional...
+
+</div>
+
+<div style="font-size:48pt; left:34cm; width:25.0cm; top:6cm; column-count: 1">
+
+<!--      789 -->- Nombreux jeu de caractères codés (utf-8, Windows-1256,...). Moins problématique aujourd’hui puisque l’UTF-8 s’est imposé ([86% des sites internet l’utilise][3])
+<!--       89 -->- Nécessitent souvent l’apprentissage de plusieurs vocabulaires (Markdown + HTML + CSS)
+<!--        9 -->- Seul LaTeX est excellent pour le rendu des équations mathématiques, bien qu’il existe des solutions (MathJax par ex.) pour les autres langages.
 
 </div>
 </section>
@@ -381,7 +386,7 @@ Un langage de balisage enrichit l’information textuelle brute d’une informat
 <section>
 <!-- A -->
 # Bases du Markdown{ class="en_tete" }
-<div style="font-size:40pt; left:5cm; width:50.0cm; top:7cm; column-count: 1">
+<div style="font-size:48pt; left:5cm; width:50.0cm; top:7cm; column-count: 1">
 
 ## Faire un retour à la ligne `<br/>`
 
@@ -401,18 +406,271 @@ Un langage de balisage enrichit l’information textuelle brute d’une informat
 <section>
 <!-- A -->
 # Pandoc Flavored Markdown (PFM){ class="en_tete" }
-<div style="font-size:40pt; left:5cm; width:50.0cm; top:7cm; column-count: 1">
+<div style="font-size:48pt; left:5cm; width:50.0cm; top:7cm; column-count: 1">
 
 Aussi appelé Pandoc’s extended Markdown
 
-- Supporte les retours à ligne `br` en ajoutant un “` \`” en fin de ligne
+- Supporte les retours à ligne `<br/>` en ajoutant un “` \`” en fin de ligne
 - Peut ajouter des attribut HTML : `# Exemple{ attribut=10cm }`
 
-Pour les détails : EPFL-ENAC-IT — Jean-Daniel Bonjour<br/><http://enacit1.epfl.ch/markdown-pandoc/>
+## Pour les détails 
 
+- <http://pandoc.org/README.html#pandocs-markdown>
+- EPFL-ENAC-IT — Jean-Daniel Bonjour <http://enacit1.epfl.ch/markdown-pandoc/>
 
 </div>
 </section>
+
+
+
+
+<section>
+<!-- A -->
+# Exemple de conversion avec Pandoc{ class="en_tete" }
+<div style="font-size:40pt; left:2cm; width:50.0cm; top:7cm; column-count: 1">
+
+    pandoc                              \
+        --standalone                    \ # doc HTML entier
+        --from markdown                 \ # format source
+        --to html                       \ # format cible
+        --highlight-style pygments      \ # rendu de code
+        --email-obfuscation references  \ # anti-spam
+        --normalize                     \ # enlève doubles espaces
+        --css=$CSS_FILE                 \ # fichier CSS
+        --output output.html            \ # fichier de sortie
+        input.md                          # fichier en entrée
+
+</div>
+</section>
+
+
+
+
+<section>
+<!-- A -->
+# Exemple de conversion avec Pandoc{ class="en_tete" }
+<div style="font-size:40pt; left:1cm; width:50.0cm; top:4.5cm; column-count: 1">
+
+![](./images/exemple-conversion-pandoc.png){ height=30cm }
+
+</div>
+</section>
+
+
+
+
+<section>
+<!-- A -->
+# Exemple de conversion avec Pandoc{ class="en_tete" }
+<div style="font-size:40pt; left:1cm; width:50.0cm; top:4.5cm; column-count: 1">
+
+![](./images/exemple-conversion-pandoc-html.png){ height=30cm }
+
+</div>
+</section>
+
+
+
+
+
+
+<section>
+<!-- A -->
+# Ressources HTML{ class="en_tete" }
+<div style="font-size:48pt; left:5cm; width:50.0cm; top:7cm; column-count: 1">
+
+- W3School
+	- <http://www.w3schools.com/html/>
+- Mozilla
+	- <https://developer.mozilla.org/fr/docs/Web/HTML>
+- W3C
+	- Doctype XHTML1 : <https://www.w3.org/TR/xhtml1/>
+	- Doctype HTML5 : <https://www.w3.org/TR/html5/>
+	- Validation : <https://validator.w3.org/>
+
+</div>
+</section>
+
+
+
+
+
+
+
+
+<section>
+<!-- A -->
+# Exemple de CSS{ class="en_tete" }
+<div style="font-size:40pt; left:1cm; width:50.0cm; top:4.5cm; column-count: 1">
+
+![](./images/exemple-css.png){ height=30cm }
+
+</div>
+</section>
+
+
+
+
+
+
+
+
+
+<section>
+<!-- A -->
+# Git{ class="en_tete" }
+<div style="font-size:48pt; left:5cm; width:50.0cm; top:6.5cm; column-count: 1">
+
+- SCM (Source Code Management) ⇒ Indispensable pour tout projet informatique
+	- Permet de gérer l’historique
+	- Permet de gérer la collaboration avec les participants
+- Exemples
+	- Git
+	- Perforce
+	- Mercurial
+	- Bazaar
+	- CVS
+	- Subversion
+	- [Liste de logiciels de SCM][2]
+
+</div>
+</section>
+
+
+
+
+
+
+
+<section>
+<!-- A -->
+# Git – avantages et inconvénients{ class="en_tete" }
+<div style="font-size:48pt; left:5cm; width:50.0cm; top:5.5cm; column-count: 1">
+
+## Avantages
+
+<!-- 234567 -->- Communauté très large ⇒ donc expérience réutilisable dans d’autres contextes + facilité de trouver des réponses
+<!--  34567 -->- Open Source
+<!--   4567 -->- Très rapide
+<!--    567 -->- Facile à installer
+<!--     67 -->- Disponible pour tous les OS courants
+<!--      7 -->- Disponibilité de services d’hébergement gratuits comme GitHub, Bitbucket ou git.epfl.ch
+
+</div>
+</section>
+
+
+
+
+
+
+<section>
+<!-- A -->
+# Git – avantages et inconvénients{ class="en_tete" }
+<div style="font-size:48pt; left:5cm; width:50.0cm; top:5.5cm; column-count: 1">
+
+## Inconvénients
+
+<!-- 2345 -->- L’interface utilisateur est inutilement complexe. Aucune commande ne peut être déduite par la logique. Les noms des commandes sont troublants (par ex. `git blame` pour voir qui a fait quoi sur un fichier.)
+<!--  345 -->- La gestion des fichiers volumineux est une option (GLFS Git Large File Storage)
+<!--   45 -->- Pas de diff de fichiers binaires
+<!--    5 -->- Il n’existe que des GUI qui n’aiderons pas les gens allergiques à la ligne de commande ⇒ difficile à utiliser par des non-techniciens
+
+</div>
+</section>
+
+
+
+
+
+
+
+<section>
+<!-- A -->
+# GitHub – avantages et inconvénients{ class="en_tete" }
+<div style="font-size:48pt; left:5cm; width:50.0cm; top:5.5cm; column-count: 1">
+
+## Avantages des dépôts et des sites web
+
+<!-- 2345678 -->- Gratuit
+<!--  345678 -->- Pas de limite sur le nombre de dépôts
+<!--   45678 -->- Possibilité de site web (autant qu’on veut ?)
+<!--    5678 -->- Bande passante OK
+<!--     678 -->- Diff visuelles
+<!--      78 -->- Projet public = publicité gratuite
+<!--       8 -->- Facilité de clonage
+</div>
+</section>
+
+
+
+
+<section>
+<!-- A -->
+# GitHub – avantages et inconvénients{ class="en_tete" }
+<div style="font-size:48pt; left:5cm; width:50.0cm; top:4cm; column-count: 1">
+
+## Inconvénients des dépôts
+
+<!--  2345678 -->- Fichiers sensibles qui doivent rester dans l’entreprise ou sur le territoire
+<!--   345678 -->- Limite de 1 GB
+<!--    45678 -->- Sinon même limitations que Git
+
+<!--     5678 -->## Inconvénients des sites web
+<!--      678 -->- uniquement statiques (pas de scripts côté serveur)
+<!--       78 -->- pas de possibilité d’utiliser des branches différentes (gh-pages ou master uniquement)
+<!--        8 -->- gestion du [CNAME][5] difficile quand on “forke”
+
+</div>
+</section>
+
+
+
+
+
+
+
+<section>
+<!-- A -->
+# GitHub.com et GitHub.io{ class="en_tete" }
+<div style="font-size:48pt; left:2cm; width:30.0cm; top:5cm; column-count: 1">
+
+![](./images/github-pyr-depot.png){ height=30cm }
+
+</div>
+<div style="font-size:48pt; left:31cm; width:30.0cm; top:5cm; column-count: 1">
+
+![](./images/github-pyr-site-web.png){ height=30cm }
+
+</div>
+
+</section>
+
+
+
+
+<section>
+<!-- A -->
+# GitHub – flux de travail{ class="en_tete" }
+<div style="font-size:48pt; left:5cm; width:50.0cm; top:4.5cm; column-count: 1">
+
+# [Forking Workflow][1]
+
+- Le responsable de projet
+	- crée un dépot sur GitHub
+	- le clone sur un ordi
+	- crée la branche “gh-pages”
+	- défini cette branche comme défaut
+	- “push” les fichiers
+
+- Les collaborateurs
+	- clonent le dépôt
+
+</div>
+</section>
+
+
+
 
 
 
@@ -425,6 +683,7 @@ Pour les détails : EPFL-ENAC-IT — Jean-Daniel Bonjour<br/><http://enacit1.ep
 [2]: https://en.wikipedia.org/wiki/List_of_version_control_software
 [3]: https://fr.wikipedia.org/wiki/UTF-8
 [4]: http://pandoc.org/README.html#templates
+[5]: https://github.com/NicHub/ouilogique.com/blob/gh-pages/CNAME
 
 </section>
 
