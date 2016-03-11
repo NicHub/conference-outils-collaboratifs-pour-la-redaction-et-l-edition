@@ -1,0 +1,763 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head>
+  <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+  <meta http-equiv="Content-Style-Type" content="text/css" />
+  <meta name="generator" content="pandoc" />
+  <title></title>
+  <style type="text/css">code{white-space: pre;}</style>
+  <link rel="stylesheet" href="../statiques/diaporama.css" type="text/css" />
+</head>
+<body>
+<!-- DIAPORAMA -->
+<!-- Page de titre -->
+<section class="page_de_garde">
+<img src="../statiques/images/LogoMC3b-petit.png" style="top:1.5cm; left:53.5cm; width:5cm" /> <img src="../statiques/images/rescif-trait.png" style="top:5.07cm; left:0cm; width:60.02cm; height:0.23cm" />
+<div style="top:11cm; left:4.5cm; font-size:50pt; font-family: Arial Narrow, sans-serif; color: #e2001a; ">
+Conférence Microclub
+</div>
+<div style="top:20cm; left:4.5cm; font-size:70pt; font-family: Impact, sans-serif;">
+Outils collaboratifs pour la rédaction et l’édition
+</div>
+<div style="top:25cm; left:4.5cm; font-size:47pt; font-family: Arial Narrow, sans-serif;">
+Nicolas Jeanmonod
+</div>
+<div style="top:28cm; left:4.5cm; font-size:30pt; font-family: Arial Narrow, sans-serif;">
+11 mars 2016, Microclub, EPFL
+</div>
+</section>
+<!-- Page bienvenue plein écran-->
+<section>
+<h1 id="fil-rouge-présentation-des-points-abordés" class="en_tete"><span style="color: #e2001a;">Fil rouge</span> Présentation des points abordés</h1>
+<img src="../statiques/images/LogoMC3b-petit.png" style="top:1.5cm; left:53.5cm; width:5cm" /> <img src="../statiques/images/rescif-trait.png" style="top:5.07cm; left:0cm; width:60.02cm; height:0.23cm" />
+<div style="top:31.26cm; left:35cm; width:23cm; text-align: right;  font-size:21pt; font-family: Arial Narrow, sans-serif; color:#555555;">
+<p><strong>Outils collaboratifs pour la rédaction et l’édition</strong></p>
+</div>
+<div style="font-size:48pt; left:5cm; width:35.0cm; top:5cm;">
+<h2 id="chaîne-éditoriale">Chaîne éditoriale</h2>
+<ul>
+<li>Édition des textes en Markdown pour les cours</li>
+<li>Édition des textes en Markdown + HTML pour les dias</li>
+<li>Génération des PDF pour les cours et les dias</li>
+<li>Mise en ligne et collaboration avec Git et GitHub
+<ul>
+<li>Corrections</li>
+<li>Pull request</li>
+<li>Intégration des corrections</li>
+</ul></li>
+</ul>
+</div>
+<div style="left:38cm;  top:10cm; display: none;">
+<img alt="logo Markdown" src="./images/Markdown-mark.svg" />
+</div>
+</section>
+<section>
+<img src="../statiques/images/LogoMC3b-petit.png" style="top:1.5cm; left:53.5cm; width:5cm" /> <img src="../statiques/images/rescif-trait.png" style="top:5.07cm; left:0cm; width:60.02cm; height:0.23cm" />
+<div style="top:31.26cm; left:35cm; width:23cm; text-align: right;  font-size:21pt; font-family: Arial Narrow, sans-serif; color:#555555;">
+<p><strong>Outils collaboratifs pour la rédaction et l’édition</strong></p>
+</div>
+<h1 id="fil-rouge-présentation-des-points-abordés-1" class="en_tete"><span style="color: #e2001a;">Fil rouge</span> Présentation des points abordés</h1>
+<div style="font-size:48pt; left:5cm; width:50.0cm; top:4cm;">
+<h2 id="contexte">Contexte</h2>
+<ul>
+<li>MOOC LED de Pierre-Yves Rochat (<a href="http://pyrochat.github.io/mooc-led/" class="uri">http://pyrochat.github.io/mooc-led/</a>)</li>
+<li>Besoin d’outils permettant la collaboration
+<ul>
+<li>L’intégrateur doit rester maitre du projet ⇒ Forking Workflow</li>
+<li>L’historique doit être disponible</li>
+<li>Les révisions doivent pouvoir être comparées</li>
+</ul></li>
+<li>Langages de balises
+<ul>
+<li>Permettent de contrôler directement le format</li>
+<li>En format texte ⇒ peuvent être comparés facilement</li>
+<li>HTML</li>
+<li>Markdown</li>
+</ul></li>
+</ul>
+</div>
+</section>
+<section>
+<img src="../statiques/images/LogoMC3b-petit.png" style="top:1.5cm; left:53.5cm; width:5cm" /> <img src="../statiques/images/rescif-trait.png" style="top:5.07cm; left:0cm; width:60.02cm; height:0.23cm" />
+<div style="top:31.26cm; left:35cm; width:23cm; text-align: right;  font-size:21pt; font-family: Arial Narrow, sans-serif; color:#555555;">
+<p><strong>Outils collaboratifs pour la rédaction et l’édition</strong></p>
+</div>
+<h1 id="fil-rouge-pourquoi-je-vous-raconte-tout-ça" class="en_tete"><span style="color: #e2001a;">Fil rouge</span> Pourquoi je vous raconte tout ça ?</h1>
+<div style="font-size:48pt; left:5cm; width:50.0cm; top:5cm;">
+<p>Parce que les techniques montrées dans cette conférence peuvent être utilisées lorsqu’on a besoin :</p>
+<ul>
+<li>D’une grande cohérence dans la mise en forme des fichiers finaux</li>
+<li>De plusieurs formats de sortie (HTML, PDF, Kindle...) avec un seul format d’entrée (Markdown ou HTML)</li>
+<li>De pouvoir gérer les contributions des différents collaborateurs</li>
+<li>D’automatiser certaines tâches</li>
+<li>De gérer des documents volumineux</li>
+</ul>
+</div>
+</section>
+<section>
+<img src="../statiques/images/LogoMC3b-petit.png" style="top:1.5cm; left:53.5cm; width:5cm" /> <img src="../statiques/images/rescif-trait.png" style="top:5.07cm; left:0cm; width:60.02cm; height:0.23cm" />
+<div style="top:31.26cm; left:35cm; width:23cm; text-align: right;  font-size:21pt; font-family: Arial Narrow, sans-serif; color:#555555;">
+<p><strong>Outils collaboratifs pour la rédaction et l’édition</strong></p>
+</div>
+<h1 id="flux-de-production" class="en_tete">Flux de production</h1>
+<div style="font-size:48pt; left:5cm; width:50.0cm; top:7cm;">
+<p><img alt="..." src="./images/synthese-flux-donnees.svg" style="width:48cm" /></p>
+</div>
+</section>
+<section>
+<img src="../statiques/images/LogoMC3b-petit.png" style="top:1.5cm; left:53.5cm; width:5cm" /> <img src="../statiques/images/rescif-trait.png" style="top:5.07cm; left:0cm; width:60.02cm; height:0.23cm" />
+<div style="top:31.26cm; left:35cm; width:23cm; text-align: right;  font-size:21pt; font-family: Arial Narrow, sans-serif; color:#555555;">
+<p><strong>Outils collaboratifs pour la rédaction et l’édition</strong></p>
+</div>
+<h1 id="github.com-et-github.io" class="en_tete">GitHub.com et GitHub.io</h1>
+<div style="font-size:48pt; left:2cm; width:30.0cm; top:5cm; column-count: 1">
+<div class="figure">
+<img src="./images/github-pyr-depot.png" height="1133" />
+
+</div>
+</div>
+<div style="font-size:48pt; left:31cm; width:30.0cm; top:5cm; column-count: 1">
+<div class="figure">
+<img src="./images/github-pyr-site-web.png" height="1133" />
+
+</div>
+</div>
+</section>
+<section>
+<img src="../statiques/images/LogoMC3b-petit.png" style="top:1.5cm; left:53.5cm; width:5cm" /> <img src="../statiques/images/rescif-trait.png" style="top:5.07cm; left:0cm; width:60.02cm; height:0.23cm" />
+<div style="top:31.26cm; left:35cm; width:23cm; text-align: right;  font-size:21pt; font-family: Arial Narrow, sans-serif; color:#555555;">
+<p><strong>Outils collaboratifs pour la rédaction et l’édition</strong></p>
+</div>
+<h1 id="langages-de-balisage" class="en_tete">Langages de balisage</h1>
+<div style="font-size:48pt; left:5cm; width:50.0cm; top:7cm;">
+<p>Un langage de balisage enrichit l’information textuelle brute d’une information sémantique.</p>
+<p><b>Comparaison processus <b>WYSIWY</b><strong>M</strong> vs <b>WYSIWY</b><strong>G</strong></b></p>
+<div style="left:0cm; width:50.0cm; top:10cm;">
+<p><strong>Markdown</strong><br/><br/></p>
+<div style="font-size:20pt">
+<pre><code># Un titre
+
+Écrire un paragraphe
+
+- Faire une liste</code></pre>
+</div>
+</div>
+<div style="left:18cm; width:50.0cm; top:10cm;">
+<p><strong>HTML</strong><br/><br/></p>
+<div style="font-size:20pt">
+<pre><code>&lt;h1&gt;Un titre&lt;/h1&gt;
+
+&lt;p&gt;Écrire un paragraphe&lt;/p&gt;
+
+&lt;ul&gt;
+    &lt;li&gt;Faire une liste&lt;/li&gt;
+&lt;/ul&gt;</code></pre>
+</div>
+</div>
+<div style="left:38cm; width:50.0cm; top:10cm;">
+<p><strong>Traitement de texte</strong><br/><br/> <img src="./images/langage-de-balisage-traitement-de-texte.png" width="377" /></p>
+</div>
+</div>
+</section>
+<section>
+<img src="../statiques/images/LogoMC3b-petit.png" style="top:1.5cm; left:53.5cm; width:5cm" /> <img src="../statiques/images/rescif-trait.png" style="top:5.07cm; left:0cm; width:60.02cm; height:0.23cm" />
+<div style="top:31.26cm; left:35cm; width:23cm; text-align: right;  font-size:21pt; font-family: Arial Narrow, sans-serif; color:#555555;">
+<p><strong>Outils collaboratifs pour la rédaction et l’édition</strong></p>
+</div>
+<h1 id="avantages-des-langages-de-balisage" class="en_tete">Avantages des langages de balisage</h1>
+<div style="font-size:48pt; left:5cm; width:50.0cm; top:7cm; column-count: 2">
+<ul>
+<li>Séparation sémantique/visuel</li>
+<li>Basés sur des fichiers textes
+<ul>
+<li>éditables avec des éditeurs simples</li>
+<li>faciles à comparer</li>
+<li>faciles à gérer avec des logiciels SCM (Git,...)</li>
+<li>résilients à l’obsolescence informatique</li>
+</ul></li>
+<li>Facile d’écrire des scripts pour automatiser les tâches récurrentes</li>
+<li>Nombreuses solutions logicielles</li>
+<li>Nombreux formats de sortie à partir d’une source unique</li>
+<li>Normes libres (non-propriétaires)</li>
+</ul>
+</div>
+</section>
+<section>
+<img src="../statiques/images/LogoMC3b-petit.png" style="top:1.5cm; left:53.5cm; width:5cm" /> <img src="../statiques/images/rescif-trait.png" style="top:5.07cm; left:0cm; width:60.02cm; height:0.23cm" />
+<div style="top:31.26cm; left:35cm; width:23cm; text-align: right;  font-size:21pt; font-family: Arial Narrow, sans-serif; color:#555555;">
+<p><strong>Outils collaboratifs pour la rédaction et l’édition</strong></p>
+</div>
+<h1 id="langages-de-balisage-1" class="en_tete">Langages de balisage</h1>
+<div style="font-size:48pt; left:5cm; width:50.0cm; top:7cm;">
+<ul>
+<li>SGML (ancêtre du HTML)</li>
+<li>HTML</li>
+<li>XML (⇒ nombreuses grammaires, ex: <strong>XHTML</strong>, DocBook, SVG, ...)</li>
+<li>TeX/LaTeX</li>
+</ul>
+</div>
+</section>
+<section>
+<img src="../statiques/images/LogoMC3b-petit.png" style="top:1.5cm; left:53.5cm; width:5cm" /> <img src="../statiques/images/rescif-trait.png" style="top:5.07cm; left:0cm; width:60.02cm; height:0.23cm" />
+<div style="top:31.26cm; left:35cm; width:23cm; text-align: right;  font-size:21pt; font-family: Arial Narrow, sans-serif; color:#555555;">
+<p><strong>Outils collaboratifs pour la rédaction et l’édition</strong></p>
+</div>
+<h1 id="langages-de-balisage-légers" class="en_tete">Langages de balisage légers</h1>
+<div style="font-size:48pt; left:5cm; width:25.0cm; top:7cm">
+<ul>
+<li><strong>Markdown</strong></li>
+<li><strong>Pandoc Flavored Markdown (PFM) <br/> = Pandoc’s extended Markdown</strong></li>
+<li>GitHub Flavored <strong>Markdown</strong> (GFM)</li>
+<li>Multi<strong>Markdown</strong></li>
+<li><strong>Markdown</strong> Extra</li>
+</ul>
+</div>
+<div style="font-size:48pt; left:35cm; width:25.0cm; top:7cm">
+<ul>
+<li>Textile</li>
+<li>Asciidoc</li>
+<li>reStructuredText</li>
+<li>kramdown</li>
+<li>Fountain</li>
+</ul>
+</div>
+</section>
+<section>
+<img src="../statiques/images/LogoMC3b-petit.png" style="top:1.5cm; left:53.5cm; width:5cm" /> <img src="../statiques/images/rescif-trait.png" style="top:5.07cm; left:0cm; width:60.02cm; height:0.23cm" />
+<div style="top:31.26cm; left:35cm; width:23cm; text-align: right;  font-size:21pt; font-family: Arial Narrow, sans-serif; color:#555555;">
+<p><strong>Outils collaboratifs pour la rédaction et l’édition</strong></p>
+</div>
+<h1 id="désavantages-des-langages-de-balisage" class="en_tete">Désavantages des langages de balisage</h1>
+<div style="font-size:48pt; left:5cm; width:25.0cm; top:6cm; column-count: 1">
+<ul>
+<li>Difficiles d’accès aux non-techniciens</li>
+<li>Trop complexes pour être édités directement (HTML)</li>
+<li>Beaucoup de choix tue le choix</li>
+<li>Trop nombreuses versions d’un même vocabulaire
+<ul>
+<li>Markdown ⇒ PFM, GFM,...</li>
+<li>HTML ⇒ DOCTYPE : HTML 5, HTML 4.01 Strict, HTML 4.01 Transitional...</li>
+</ul></li>
+<li>Incompatibilité des agents utilisateurs (IE6...)</li>
+</ul>
+</div>
+<div style="font-size:48pt; left:34cm; width:25.0cm; top:6cm; column-count: 1">
+<ul>
+<li>Nombreux jeu de caractères codés (utf-8, Windows-1256,...). Moins problématique aujourd’hui puisque l’UTF-8 s’est imposé (<a href="https://fr.wikipedia.org/wiki/UTF-8">86% des sites internet l’utilise</a>)</li>
+<li>Nécessitent souvent l’apprentissage de plusieurs vocabulaires (Markdown + HTML + CSS)</li>
+<li>Seul LaTeX est excellent pour le rendu des équations mathématiques, bien qu’il existe des solutions (MathJax par ex.) pour les autres langages.</li>
+</ul>
+</div>
+</section>
+<section>
+<img src="../statiques/images/LogoMC3b-petit.png" style="top:1.5cm; left:53.5cm; width:5cm" /> <img src="../statiques/images/rescif-trait.png" style="top:5.07cm; left:0cm; width:60.02cm; height:0.23cm" />
+<div style="top:31.26cm; left:35cm; width:23cm; text-align: right;  font-size:21pt; font-family: Arial Narrow, sans-serif; color:#555555;">
+<p><strong>Outils collaboratifs pour la rédaction et l’édition</strong></p>
+</div>
+<h1 id="normes-markdown" class="en_tete">Normes Markdown</h1>
+<div style="font-size:48pt; left:5cm; width:50.0cm; top:7cm; column-count: 1">
+<ul>
+<li>Norme de base <em>by John Gruber</em>
+<ul>
+<li><a href="http://daringfireball.net/projects/markdown/" class="uri">http://daringfireball.net/projects/markdown/</a></li>
+</ul></li>
+<li>GitHub Flavored Markdown (GFM)
+<ul>
+<li><a href="https://help.github.com/categories/writing-on-github/" class="uri">https://help.github.com/categories/writing-on-github/</a></li>
+</ul></li>
+<li>Pandoc (PFM)
+<ul>
+<li><a href="http://pandoc.org/README.html#pandocs-markdown" class="uri">http://pandoc.org/README.html#pandocs-markdown</a></li>
+<li><strong>EPFL-ENAC-IT — Jean-Daniel Bonjour ⇒ Excellente ressource !</strong><br/><a href="http://enacit1.epfl.ch/markdown-pandoc/" class="uri">http://enacit1.epfl.ch/markdown-pandoc/</a></li>
+</ul></li>
+<li>CommonMark ⇒ projet de standardisation
+<ul>
+<li><a href="http://commonmark.org/" class="uri">http://commonmark.org/</a></li>
+</ul></li>
+</ul>
+</div>
+</section>
+<section>
+<img src="../statiques/images/LogoMC3b-petit.png" style="top:1.5cm; left:53.5cm; width:5cm" /> <img src="../statiques/images/rescif-trait.png" style="top:5.07cm; left:0cm; width:60.02cm; height:0.23cm" />
+<div style="top:31.26cm; left:35cm; width:23cm; text-align: right;  font-size:21pt; font-family: Arial Narrow, sans-serif; color:#555555;">
+<p><strong>Outils collaboratifs pour la rédaction et l’édition</strong></p>
+</div>
+<h1 id="bases-du-markdown" class="en_tete">Bases du Markdown</h1>
+<div style="font-size:40pt; left:5cm; width:50.0cm; top:7cm; column-count: 1">
+<pre><code>Le Markdown est conçu pour être :
+    - facile à lire et à écrire
+    - être transformé en HTML
+
+En Markdown traditionnel↵
+un paragraphe se termine avec deux retours↵
+à la ligne.↵
+↵
+Donc les 3 lignes ci-dessus ne forment qu’un seul
+paragraphe.</code></pre>
+</div>
+</section>
+<section>
+<img src="../statiques/images/LogoMC3b-petit.png" style="top:1.5cm; left:53.5cm; width:5cm" /> <img src="../statiques/images/rescif-trait.png" style="top:5.07cm; left:0cm; width:60.02cm; height:0.23cm" />
+<div style="top:31.26cm; left:35cm; width:23cm; text-align: right;  font-size:21pt; font-family: Arial Narrow, sans-serif; color:#555555;">
+<p><strong>Outils collaboratifs pour la rédaction et l’édition</strong></p>
+</div>
+<h1 id="bases-du-markdown-1" class="en_tete">Bases du Markdown</h1>
+<div style="font-size:40pt; left:5cm; width:50.0cm; top:7cm; column-count: 1">
+<pre><code># Titre de niveau 1 #####################
+
+Autre syntaxe pour niveau 1
+===========================
+
+## Titre de niveau 2
+
+Syntaxe _alternative_ pour niveau 2
+-----------------------------------
+
+### Titre de niveau 3 incluant [un lien](http://example.com/)
+
+#### Titre de niveau 4</code></pre>
+</div>
+</section>
+<section>
+<img src="../statiques/images/LogoMC3b-petit.png" style="top:1.5cm; left:53.5cm; width:5cm" /> <img src="../statiques/images/rescif-trait.png" style="top:5.07cm; left:0cm; width:60.02cm; height:0.23cm" />
+<div style="top:31.26cm; left:35cm; width:23cm; text-align: right;  font-size:21pt; font-family: Arial Narrow, sans-serif; color:#555555;">
+<p><strong>Outils collaboratifs pour la rédaction et l’édition</strong></p>
+</div>
+<h1 id="bases-du-markdown-2" class="en_tete">Bases du Markdown</h1>
+<div style="font-size:40pt; left:5cm; width:50.0cm; top:7cm; column-count: 1">
+<pre><code>Paragraphe normal
+
+&gt; Début du bloc de citation
+&gt;
+&gt; * élément de liste
+&gt; * second élément
+&gt;
+&gt;&gt; Décalage de 2ème niveau, usage de _styles_
+Markdown, &lt;u&gt;balises&lt;/u&gt; HTML
+&gt;
+&gt; Bloc de code dans la citation
+
+Retour à l&#39;alignement normal</code></pre>
+</div>
+</section>
+<section>
+<img src="../statiques/images/LogoMC3b-petit.png" style="top:1.5cm; left:53.5cm; width:5cm" /> <img src="../statiques/images/rescif-trait.png" style="top:5.07cm; left:0cm; width:60.02cm; height:0.23cm" />
+<div style="top:31.26cm; left:35cm; width:23cm; text-align: right;  font-size:21pt; font-family: Arial Narrow, sans-serif; color:#555555;">
+<p><strong>Outils collaboratifs pour la rédaction et l’édition</strong></p>
+</div>
+<h1 id="bases-du-markdown-3" class="en_tete">Bases du Markdown</h1>
+<div style="font-size:48pt; left:5cm; width:50.0cm; top:7cm; column-count: 1">
+<h2 id="faire-un-retour-à-la-ligne-br">Faire un retour à la ligne <code>&lt;br/&gt;</code></h2>
+<ul>
+<li>En Markdown classique, ce n’est pas possible (ce qui est quand même incroyable !)</li>
+<li>En MultiMarkdown et en GFM, il faut ajouter deux espaces à la fin de la ligne précédant le saut.</li>
+<li>Avec Pandoc, il faut ajouter une espace et un caractère <code>\</code> à la fin de la ligne précédant le saut.</li>
+</ul>
+</div>
+</section>
+<section>
+<img src="../statiques/images/LogoMC3b-petit.png" style="top:1.5cm; left:53.5cm; width:5cm" /> <img src="../statiques/images/rescif-trait.png" style="top:5.07cm; left:0cm; width:60.02cm; height:0.23cm" />
+<div style="top:31.26cm; left:35cm; width:23cm; text-align: right;  font-size:21pt; font-family: Arial Narrow, sans-serif; color:#555555;">
+<p><strong>Outils collaboratifs pour la rédaction et l’édition</strong></p>
+</div>
+<h1 id="pandoc-flavored-markdown-pfm" class="en_tete">Pandoc Flavored Markdown (PFM)</h1>
+<div style="font-size:48pt; left:5cm; width:50.0cm; top:7cm; column-count: 1">
+<p>Le PFM est aussi appelé <em>“Pandoc’s extended Markdown”</em></p>
+<ul>
+<li>Supporte les retours à ligne <code>&lt;br/&gt;</code> en ajoutant un “<code>\</code>” en fin de ligne</li>
+<li>Peut ajouter des attribut HTML : <code># Exemple{ attribut=&quot;10cm&quot; }</code></li>
+</ul>
+<h2 id="pour-les-détails"> Pour les détails </h2>
+<ul>
+<li><a href="http://pandoc.org/README.html#pandocs-markdown" class="uri">http://pandoc.org/README.html#pandocs-markdown</a></li>
+<li>EPFL-ENAC-IT — Jean-Daniel Bonjour <a href="http://enacit1.epfl.ch/markdown-pandoc/" class="uri">http://enacit1.epfl.ch/markdown-pandoc/</a></li>
+</ul>
+</div>
+</section>
+<section>
+<img src="../statiques/images/LogoMC3b-petit.png" style="top:1.5cm; left:53.5cm; width:5cm" /> <img src="../statiques/images/rescif-trait.png" style="top:5.07cm; left:0cm; width:60.02cm; height:0.23cm" />
+<div style="top:31.26cm; left:35cm; width:23cm; text-align: right;  font-size:21pt; font-family: Arial Narrow, sans-serif; color:#555555;">
+<p><strong>Outils collaboratifs pour la rédaction et l’édition</strong></p>
+</div>
+<h1 id="exemple-de-conversion-avec-pandoc" class="en_tete">Exemple de conversion avec Pandoc</h1>
+<div style="font-size:40pt; left:2cm; width:50.0cm; top:7cm; column-count: 1">
+<pre><code>pandoc                              \
+    --standalone                    \ # doc HTML entier
+    --from markdown                 \ # format source
+    --to html                       \ # format cible
+    --highlight-style pygments      \ # rendu de code
+    --email-obfuscation references  \ # anti-spam
+    --normalize                     \ # enlève doubles espaces
+    --css=$CSS_FILE                 \ # fichier CSS
+    --output output.html            \ # fichier de sortie
+    input.md                          # fichier en entrée</code></pre>
+</div>
+</section>
+<section>
+<img src="../statiques/images/LogoMC3b-petit.png" style="top:1.5cm; left:53.5cm; width:5cm" /> <img src="../statiques/images/rescif-trait.png" style="top:5.07cm; left:0cm; width:60.02cm; height:0.23cm" />
+<div style="top:31.26cm; left:35cm; width:23cm; text-align: right;  font-size:21pt; font-family: Arial Narrow, sans-serif; color:#555555;">
+<p><strong>Outils collaboratifs pour la rédaction et l’édition</strong></p>
+</div>
+<h1 id="exemple-de-conversion-avec-pandoc-1" class="en_tete">Exemple de conversion avec Pandoc</h1>
+<div style="font-size:40pt; left:1cm; width:50.0cm; top:4.5cm; column-count: 1">
+<div class="figure">
+<img src="./images/exemple-conversion-pandoc.png" height="1133" />
+
+</div>
+</div>
+</section>
+<section>
+<img src="../statiques/images/LogoMC3b-petit.png" style="top:1.5cm; left:53.5cm; width:5cm" /> <img src="../statiques/images/rescif-trait.png" style="top:5.07cm; left:0cm; width:60.02cm; height:0.23cm" />
+<div style="top:31.26cm; left:35cm; width:23cm; text-align: right;  font-size:21pt; font-family: Arial Narrow, sans-serif; color:#555555;">
+<p><strong>Outils collaboratifs pour la rédaction et l’édition</strong></p>
+</div>
+<h1 id="exemple-de-css" class="en_tete">Exemple de CSS</h1>
+<div style="font-size:40pt; left:1cm; width:50.0cm; top:4.5cm; column-count: 1">
+<div class="figure">
+<img src="./images/exemple-css.png" height="1133" />
+
+</div>
+</div>
+</section>
+<section>
+<img src="../statiques/images/LogoMC3b-petit.png" style="top:1.5cm; left:53.5cm; width:5cm" /> <img src="../statiques/images/rescif-trait.png" style="top:5.07cm; left:0cm; width:60.02cm; height:0.23cm" />
+<div style="top:31.26cm; left:35cm; width:23cm; text-align: right;  font-size:21pt; font-family: Arial Narrow, sans-serif; color:#555555;">
+<p><strong>Outils collaboratifs pour la rédaction et l’édition</strong></p>
+</div>
+<h1 id="exemple-de-conversion-avec-pandoc-2" class="en_tete">Exemple de conversion avec Pandoc</h1>
+<div style="font-size:40pt; left:15cm; width:50.0cm; top:4.5cm; column-count: 1">
+<div class="figure">
+<img src="./images/exemple-conversion-pandoc-html.png" height="1133" />
+
+</div>
+</div>
+</section>
+<section>
+<img src="../statiques/images/LogoMC3b-petit.png" style="top:1.5cm; left:53.5cm; width:5cm" /> <img src="../statiques/images/rescif-trait.png" style="top:5.07cm; left:0cm; width:60.02cm; height:0.23cm" />
+<div style="top:31.26cm; left:35cm; width:23cm; text-align: right;  font-size:21pt; font-family: Arial Narrow, sans-serif; color:#555555;">
+<p><strong>Outils collaboratifs pour la rédaction et l’édition</strong></p>
+</div>
+<h1 id="conversion-html-pdf-avec-prince-princexml.com" class="en_tete">Conversion HTML – PDF avec Prince <a href="http://www.princexml.com/">princexml.com</a></h1>
+<div style="font-size:40pt; left:5cm; width:30.0cm; top:4.5cm; column-count: 1">
+<h2 id="avantages">Avantages</h2>
+<ul>
+<li><a href="http://www.princexml.com/howcome/2009/aquarist/AdvancedAquarist-2009-01.pdf">Résultats magnifiques</a></li>
+<li>Supporte de nombreuses possibilités des CSS</li>
+<li>Peut exécuter des JavaScript lors de la génération</li>
+<li>Très rapide</li>
+</ul>
+<h2 id="désavantages">Désavantages</h2>
+<ul>
+<li>Coûteux (495$)</li>
+<li>Pas utilisable tel quel par les non-techniciens car uniquement en ligne de commande</li>
+</ul>
+</div>
+<div style="font-size:40pt; left:34cm; width:30.0cm; top:4.5cm; column-count: 1">
+<h2 id="utilisation">Utilisation</h2>
+<pre><code>prince            \
+    input.html    \
+    -o output.pdf</code></pre>
+</div>
+</section>
+<section>
+<img src="../statiques/images/LogoMC3b-petit.png" style="top:1.5cm; left:53.5cm; width:5cm" /> <img src="../statiques/images/rescif-trait.png" style="top:5.07cm; left:0cm; width:60.02cm; height:0.23cm" />
+<div style="top:31.26cm; left:35cm; width:23cm; text-align: right;  font-size:21pt; font-family: Arial Narrow, sans-serif; color:#555555;">
+<p><strong>Outils collaboratifs pour la rédaction et l’édition</strong></p>
+</div>
+<h1 id="conversion-html-pdf-avec-weasyprint-weasyprint.org" class="en_tete">Conversion HTML – PDF avec WeasyPrint <a href="http://weasyprint.org">weasyprint.org</a></h1>
+<div style="font-size:40pt; left:5cm; width:30.0cm; top:4.5cm; column-count: 1">
+<h2 id="avantages-1">Avantages</h2>
+<ul>
+<li>Gratuit (licence BSD)</li>
+</ul>
+<h2 id="désavantages-1">Désavantages</h2>
+<ul>
+<li>Résultats parfois imprévisibles</li>
+<li>Ne supporte pas autant de possibilités CSS que Prince</li>
+<li>Pas de JavaScript lors de la génération</li>
+<li>Très lent</li>
+<li>Pas utilisable tel quel par les non-techniciens car uniquement en ligne de commande</li>
+<li>Potentiellement infernal à installer</li>
+</ul>
+</div>
+<div style="font-size:40pt; left:34cm; width:30.0cm; top:4.5cm; column-count: 1">
+<h2 id="utilisation-1">Utilisation</h2>
+<pre><code>weasyprint     \
+    input.html \
+    output.pdf</code></pre>
+</div>
+</section>
+<section>
+<img src="../statiques/images/LogoMC3b-petit.png" style="top:1.5cm; left:53.5cm; width:5cm" /> <img src="../statiques/images/rescif-trait.png" style="top:5.07cm; left:0cm; width:60.02cm; height:0.23cm" />
+<div style="top:31.26cm; left:35cm; width:23cm; text-align: right;  font-size:21pt; font-family: Arial Narrow, sans-serif; color:#555555;">
+<p><strong>Outils collaboratifs pour la rédaction et l’édition</strong></p>
+</div>
+<h1 id="exemple-de-conversion-avec-prince" class="en_tete">Exemple de conversion avec Prince</h1>
+<div style="font-size:40pt; left:18cm; width:50.0cm; top:5cm; column-count: 1">
+<div class="figure">
+<img src="./images/exemple-conversion-pandoc-pdf-prince.png" height="1133" />
+
+</div>
+</div>
+</section>
+<section>
+<img src="../statiques/images/LogoMC3b-petit.png" style="top:1.5cm; left:53.5cm; width:5cm" /> <img src="../statiques/images/rescif-trait.png" style="top:5.07cm; left:0cm; width:60.02cm; height:0.23cm" />
+<div style="top:31.26cm; left:35cm; width:23cm; text-align: right;  font-size:21pt; font-family: Arial Narrow, sans-serif; color:#555555;">
+<p><strong>Outils collaboratifs pour la rédaction et l’édition</strong></p>
+</div>
+<h1 id="ressources-html" class="en_tete">Ressources HTML</h1>
+<div style="font-size:48pt; left:5cm; width:50.0cm; top:7cm; column-count: 1">
+<ul>
+<li>W3School
+<ul>
+<li><a href="http://www.w3schools.com/html/" class="uri">http://www.w3schools.com/html/</a></li>
+</ul></li>
+<li>Mozilla
+<ul>
+<li><a href="https://developer.mozilla.org/fr/docs/Web/HTML" class="uri">https://developer.mozilla.org/fr/docs/Web/HTML</a></li>
+</ul></li>
+<li>W3C
+<ul>
+<li>Doctype XHTML1 : <a href="https://www.w3.org/TR/xhtml1/" class="uri">https://www.w3.org/TR/xhtml1/</a></li>
+<li>Doctype HTML5 : <a href="https://www.w3.org/TR/html5/" class="uri">https://www.w3.org/TR/html5/</a></li>
+<li>Validation : <a href="https://validator.w3.org/" class="uri">https://validator.w3.org/</a></li>
+</ul></li>
+</ul>
+</div>
+</section>
+<section>
+<img src="../statiques/images/LogoMC3b-petit.png" style="top:1.5cm; left:53.5cm; width:5cm" /> <img src="../statiques/images/rescif-trait.png" style="top:5.07cm; left:0cm; width:60.02cm; height:0.23cm" />
+<div style="top:31.26cm; left:35cm; width:23cm; text-align: right;  font-size:21pt; font-family: Arial Narrow, sans-serif; color:#555555;">
+<p><strong>Outils collaboratifs pour la rédaction et l’édition</strong></p>
+</div>
+<h1 id="outil-pre-dia" class="en_tete">Outil “pre-dia”</h1>
+<div style="font-size:48pt; left:2cm; width:28.0cm; top:6.5cm;">
+<h2 id="génération-de-dias-pour-les-vidéos-du-mooc-led">Génération de dias pour les vidéos du MOOC LED</h2>
+<ul>
+<li>Mode “Normal” ⇒ avec séquences</li>
+<li>Mode “Compact” ⇒ sans séquences (applaties)</li>
+</ul>
+</div>
+<div style="font-size:48pt; left:31cm; width:30.0cm; top:6.5cm;">
+<div class="figure">
+<img src="./images/exemple-pre-dia-1.png" height="755" />
+
+</div>
+</div>
+</section>
+<section>
+<img src="../statiques/images/LogoMC3b-petit.png" style="top:1.5cm; left:53.5cm; width:5cm" /> <img src="../statiques/images/rescif-trait.png" style="top:5.07cm; left:0cm; width:60.02cm; height:0.23cm" />
+<div style="top:31.26cm; left:35cm; width:23cm; text-align: right;  font-size:21pt; font-family: Arial Narrow, sans-serif; color:#555555;">
+<p><strong>Outils collaboratifs pour la rédaction et l’édition</strong></p>
+</div>
+<h1 id="git" class="en_tete">Git</h1>
+<div style="font-size:48pt; left:5cm; width:50.0cm; top:6.5cm; column-count: 1">
+<ul>
+<li>SCM (Source Code Management) ⇒ Indispensable pour tout projet informatique
+<ul>
+<li>Permet de gérer l’historique</li>
+<li>Permet de gérer la collaboration avec les participants</li>
+</ul></li>
+<li>Exemples
+<ul>
+<li>Git</li>
+<li>Perforce</li>
+<li>Mercurial</li>
+<li>Bazaar</li>
+<li>CVS</li>
+<li>Subversion</li>
+<li><a href="https://en.wikipedia.org/wiki/List_of_version_control_software">Liste de logiciels de SCM</a></li>
+</ul></li>
+</ul>
+</div>
+</section>
+<section>
+<img src="../statiques/images/LogoMC3b-petit.png" style="top:1.5cm; left:53.5cm; width:5cm" /> <img src="../statiques/images/rescif-trait.png" style="top:5.07cm; left:0cm; width:60.02cm; height:0.23cm" />
+<div style="top:31.26cm; left:35cm; width:23cm; text-align: right;  font-size:21pt; font-family: Arial Narrow, sans-serif; color:#555555;">
+<p><strong>Outils collaboratifs pour la rédaction et l’édition</strong></p>
+</div>
+<h1 id="git-avantages-et-inconvénients" class="en_tete">Git – avantages et inconvénients</h1>
+<div style="font-size:48pt; left:5cm; width:50.0cm; top:5.5cm; column-count: 1">
+<h2 id="avantages-2">Avantages</h2>
+<ul>
+<li>Communauté très large ⇒ donc expérience réutilisable dans d’autres contextes + facilité de trouver des réponses</li>
+<li>Open Source</li>
+<li>Très rapide</li>
+<li>Facile à installer</li>
+<li>Disponible pour tous les OS courants</li>
+<li>Disponibilité de services d’hébergement gratuits comme GitHub, Bitbucket ou git.epfl.ch</li>
+</ul>
+</div>
+</section>
+<section>
+<img src="../statiques/images/LogoMC3b-petit.png" style="top:1.5cm; left:53.5cm; width:5cm" /> <img src="../statiques/images/rescif-trait.png" style="top:5.07cm; left:0cm; width:60.02cm; height:0.23cm" />
+<div style="top:31.26cm; left:35cm; width:23cm; text-align: right;  font-size:21pt; font-family: Arial Narrow, sans-serif; color:#555555;">
+<p><strong>Outils collaboratifs pour la rédaction et l’édition</strong></p>
+</div>
+<h1 id="git-avantages-et-inconvénients-1" class="en_tete">Git – avantages et inconvénients</h1>
+<div style="font-size:48pt; left:5cm; width:50.0cm; top:5.5cm; column-count: 1">
+<h2 id="inconvénients">Inconvénients</h2>
+<ul>
+<li>L’interface utilisateur est inutilement complexe. Aucune commande ne peut être déduite par la logique. Les noms des commandes sont troublants (par ex. <code>git blame</code> pour voir qui a fait quoi sur un fichier.)</li>
+<li>La gestion des fichiers volumineux est une option (GLFS Git Large File Storage)</li>
+<li>Pas de diff de fichiers binaires</li>
+<li>Il n’existe que des GUI qui n’aiderons pas les gens allergiques à la ligne de commande ⇒ difficile à utiliser par des non-techniciens</li>
+</ul>
+</div>
+</section>
+<section>
+<img src="../statiques/images/LogoMC3b-petit.png" style="top:1.5cm; left:53.5cm; width:5cm" /> <img src="../statiques/images/rescif-trait.png" style="top:5.07cm; left:0cm; width:60.02cm; height:0.23cm" />
+<div style="top:31.26cm; left:35cm; width:23cm; text-align: right;  font-size:21pt; font-family: Arial Narrow, sans-serif; color:#555555;">
+<p><strong>Outils collaboratifs pour la rédaction et l’édition</strong></p>
+</div>
+<h1 id="github-avantages-et-inconvénients" class="en_tete">GitHub – avantages et inconvénients</h1>
+<div style="font-size:48pt; left:5cm; width:50.0cm; top:5.5cm; column-count: 1">
+<h2 id="avantages-des-dépôts-et-des-sites-web">Avantages des dépôts et des sites web</h2>
+<ul>
+<li>Gratuit</li>
+<li>Pas de limite sur le nombre de dépôts</li>
+<li>Possibilité de site web (autant qu’on veut à priori)</li>
+<li>Bande passante OK</li>
+<li>Diff visuelles</li>
+<li>Projet public = publicité gratuite</li>
+<li>Facilité de clonage</li>
+</ul>
+</div>
+</section>
+<section>
+<img src="../statiques/images/LogoMC3b-petit.png" style="top:1.5cm; left:53.5cm; width:5cm" /> <img src="../statiques/images/rescif-trait.png" style="top:5.07cm; left:0cm; width:60.02cm; height:0.23cm" />
+<div style="top:31.26cm; left:35cm; width:23cm; text-align: right;  font-size:21pt; font-family: Arial Narrow, sans-serif; color:#555555;">
+<p><strong>Outils collaboratifs pour la rédaction et l’édition</strong></p>
+</div>
+<h1 id="github-avantages-et-inconvénients-1" class="en_tete">GitHub – avantages et inconvénients</h1>
+<div style="font-size:48pt; left:5cm; width:50.0cm; top:4cm; column-count: 1">
+<h2 id="inconvénients-des-dépôts">Inconvénients des dépôts</h2>
+<ul>
+<li>Fichiers sensibles qui doivent rester dans l’entreprise ou sur le territoire</li>
+<li>Limite de 1 GB</li>
+<li>Sinon même limitations que Git</li>
+</ul>
+<h2 id="inconvénients-des-sites-web">Inconvénients des sites web</h2>
+<ul>
+<li>Uniquement statiques (pas de scripts côté serveur)</li>
+<li>Pas de possibilité d’utiliser des branches différentes (gh-pages ou master uniquement)</li>
+<li>Gestion du <a href="https://github.com/NicHub/ouilogique.com/blob/gh-pages/CNAME">CNAME</a> difficile quand on “forke”</li>
+</ul>
+</div>
+</section>
+<section>
+<img src="../statiques/images/LogoMC3b-petit.png" style="top:1.5cm; left:53.5cm; width:5cm" /> <img src="../statiques/images/rescif-trait.png" style="top:5.07cm; left:0cm; width:60.02cm; height:0.23cm" />
+<div style="top:31.26cm; left:35cm; width:23cm; text-align: right;  font-size:21pt; font-family: Arial Narrow, sans-serif; color:#555555;">
+<p><strong>Outils collaboratifs pour la rédaction et l’édition</strong></p>
+</div>
+<h1 id="github.com-et-github.io-1" class="en_tete">GitHub.com et GitHub.io</h1>
+<div style="font-size:48pt; left:2cm; width:30.0cm; top:5cm; column-count: 1">
+<div class="figure">
+<img src="./images/github-pyr-depot.png" height="1133" />
+
+</div>
+</div>
+<div style="font-size:48pt; left:31cm; width:30.0cm; top:5cm; column-count: 1">
+<div class="figure">
+<img src="./images/github-pyr-site-web.png" height="1133" />
+
+</div>
+</div>
+</section>
+<section>
+<img src="../statiques/images/LogoMC3b-petit.png" style="top:1.5cm; left:53.5cm; width:5cm" /> <img src="../statiques/images/rescif-trait.png" style="top:5.07cm; left:0cm; width:60.02cm; height:0.23cm" />
+<div style="top:31.26cm; left:35cm; width:23cm; text-align: right;  font-size:21pt; font-family: Arial Narrow, sans-serif; color:#555555;">
+<p><strong>Outils collaboratifs pour la rédaction et l’édition</strong></p>
+</div>
+<h1 id="github-flux-de-travail-avec-site-web-sur-github" class="en_tete">GitHub – flux de travail (avec site web sur GitHub)</h1>
+<div style="font-size:48pt; left:5cm; width:50.0cm; top:6cm; column-count: 1">
+<h1 id="forking-workflow1"><a href="https://www.atlassian.com/git/tutorials/comparing-workflows/forking-workflow">Forking Workflow</a></h1>
+</div>
+<div style="font-size:48pt; left:5cm; width:30.0cm; top:9cm; column-count: 1">
+<ul>
+<li>Le responsable de projet
+<ul>
+<li>crée un dépot sur GitHub</li>
+<li>le clone sur un ordi</li>
+<li>crée la branche “gh-pages”</li>
+<li>défini cette branche comme défaut</li>
+<li>“add+commit+push” les fichiers</li>
+<li>accepte ou refuse les “pull request”</li>
+</ul></li>
+</ul>
+</div>
+<div style="font-size:48pt; left:30cm; width:30.0cm; top:9cm; column-count: 1">
+<ul>
+<li>Les collaborateurs
+<ul>
+<li>clonent le dépôt du responsable (optionnel)</li>
+<li>“fork” le dépôt et clonent le “fork” sur un ordi</li>
+<li>modifient ou ajoutent des fichiers</li>
+<li>“add+commit+push” les fichiers vers leur “fork”</li>
+<li>envoient des “pull request” au reponsable pour qu’il intègre les modifications</li>
+<li>synchronisent leurs “fork”</li>
+</ul></li>
+</ul>
+</div>
+</section>
+<section>
+<img src="../statiques/images/LogoMC3b-petit.png" style="top:1.5cm; left:53.5cm; width:5cm" /> <img src="../statiques/images/rescif-trait.png" style="top:5.07cm; left:0cm; width:60.02cm; height:0.23cm" />
+<div style="top:31.26cm; left:35cm; width:23cm; text-align: right;  font-size:21pt; font-family: Arial Narrow, sans-serif; color:#555555;">
+<p><strong>Outils collaboratifs pour la rédaction et l’édition</strong></p>
+</div>
+<h1 id="exemples-de-sites-web-sur-github" class="en_tete">Exemples de sites web sur GitHub</h1>
+<div style="font-size:48pt; left:5cm; width:50.0cm; top:7cm; column-count: 1">
+<ul>
+<li><a href="http://pyrochat.github.io/mooc-led/" class="uri">http://pyrochat.github.io/mooc-led/</a>
+<ul>
+<li><a href="https://github.com/pyrochat/mooc-led" class="uri">https://github.com/pyrochat/mooc-led</a></li>
+</ul></li>
+<li><a href="http://ouilogique.com/" class="uri">http://ouilogique.com/</a>
+<ul>
+<li><a href="https://github.com/NicHub/ouilogique.com" class="uri">https://github.com/NicHub/ouilogique.com</a></li>
+</ul></li>
+<li><a href="http://cnl-naturopathie.ch/" class="uri">http://cnl-naturopathie.ch/</a>
+<ul>
+<li><a href="https://github.com/cnl-naturopathie/site-web-v4" class="uri">https://github.com/cnl-naturopathie/site-web-v4</a></li>
+</ul></li>
+<li><a href="http://getbootstrap.com/" class="uri">http://getbootstrap.com/</a>
+<ul>
+<li><a href="https://github.com/twbs/bootstrap" class="uri">https://github.com/twbs/bootstrap</a></li>
+</ul></li>
+</ul>
+</div>
+</section>
+<section>
+<img src="../statiques/images/LogoMC3b-petit.png" style="top:1.5cm; left:53.5cm; width:5cm" /> <img src="../statiques/images/rescif-trait.png" style="top:5.07cm; left:0cm; width:60.02cm; height:0.23cm" />
+<div style="top:31.26cm; left:35cm; width:23cm; text-align: right;  font-size:21pt; font-family: Arial Narrow, sans-serif; color:#555555;">
+<p><strong>Outils collaboratifs pour la rédaction et l’édition</strong></p>
+</div>
+<h1 id="quelques-outils-pratiques" class="en_tete">Quelques outils pratiques</h1>
+<div style="font-size:48pt; left:5cm; width:50.0cm; top:7cm; column-count: 1">
+<ul>
+<li>Sublime Text <a href="https://www.sublimetext.com/">sublimetext.com</a></li>
+<li>Atom <a href="https://atom.io/">atom.io</a></li>
+<li>Dterm <a href="http://decimus.net/DTerm">decimus.net/DTerm</a></li>
+<li>Antidote <a href="http://www.druide.com/">druide.com</a></li>
+<li>Le guide du typographe romand <a href="http://www.typoguide.ch/">typoguide.ch</a></li>
+<li>Validation HTML <a href="https://validator.w3.org/">validator.w3.org</a></li>
+<li>Image Optim <a href="https://imageoptim.com/">imageoptim.com</a></li>
+<li>Marked 2 <a href="http://marked2app.com/">marked2app.com</a></li>
+<li>Ukelele <a href="http://scripts.sil.org/cms/scripts/page.php?site_id=nrsi&amp;id=ukelele">scripts.sil.org</a></li>
+</ul>
+</div>
+</section>
+<section style="display: none">
+</section>
+<section>
+<img src="../statiques/images/LogoMC3b-petit.png" style="top:1.5cm; left:53.5cm; width:5cm" /> <img src="../statiques/images/rescif-trait.png" style="top:5.07cm; left:0cm; width:60.02cm; height:0.23cm" />
+<div style="top:31.26cm; left:35cm; width:23cm; text-align: right;  font-size:21pt; font-family: Arial Narrow, sans-serif; color:#555555;">
+<p><strong>Outils collaboratifs pour la rédaction et l’édition</strong></p>
+</div>
+<h1 id="canvas" class="en_tete">Canvas</h1>
+<div style="font-size:48pt; left:5cm; width:50.0cm; top:7cm; column-count: 1">
+
+</div>
+</section>
+</body>
+</html>

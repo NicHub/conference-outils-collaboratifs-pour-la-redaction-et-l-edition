@@ -8,6 +8,15 @@ function MD2MDpre
 		$MD_FILE_PRE &>/dev/null
 }
 
+function MD2MDprecompact
+{
+    python                          \
+        ../generation/pre-dia.py -c \
+        $MD_FILE_IN                 \
+        $MD_FILE_PRE &>/dev/null
+}
+
+
 function MD2HTML
 {
 	pandoc                             \
@@ -87,9 +96,29 @@ function MD2DIA-NORMAL
     fi
 }
 
+function MD2DIA-COMPACT
+{
+    CODE=diapos
+    MD_FILE_IN=$CODE.md
+    MD_FILE_PRE=$CODE-pre-compact.md
+    HTML_FILE=$CODE-compact.html
+    PDF_FILE=$CODE-compact.pdf
+    CSS_FILE=../statiques/diaporama.css
+    if [ -f $MD_FILE_IN ]; then
+        MD2MDprecompact
+        MD2HTML
+        HTML2PDF
+        CLEANUP
+    else
+        echo -e "\xE2\x9C\x96 ⇒ $MD_FILE_IN N’EXISTE PAS"
+    fi
+}
+
 SCRIPT=`realpath $0`
 CUR_DIR=`dirname $SCRIPT`
 echo $CUR_DIR
 cd $CUR_DIR
 MD2DIA-NORMAL
+# OPENPDF
+MD2DIA-COMPACT
 # OPENPDF

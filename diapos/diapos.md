@@ -33,10 +33,10 @@
 <!-- 2345678 -->- Édition des textes en Markdown pour les cours
 <!--  345678 -->- Édition des textes en Markdown + HTML pour les dias
 <!--   45678 -->- Génération des PDF pour les cours et les dias
-<!--    5678 -->- Mise en ligne sur GitHub
-<!--     678 -->- Corrections
-<!--      78 -->- Pull request
-<!--       8 -->- Intégration des corrections
+<!--    5678 -->- Mise en ligne et collaboration avec Git et GitHub
+<!--     678 -->	- Corrections
+<!--      78 -->	- Pull request
+<!--       8 -->	- Intégration des corrections
 
 </div>
 
@@ -71,6 +71,24 @@
 </section>
 
 
+
+
+
+<section>
+<!-- A -->
+# <span style="color: #e2001a;">Fil rouge</span> Pourquoi je vous raconte tout ça ?{ class="en_tete" }
+<div style="font-size:48pt; left:5cm; width:50.0cm; top:5cm;">
+
+Parce que les techniques montrées dans cette conférence peuvent être utilisées lorsqu’on a besoin :
+
+<!-- 23456 -->- D’une grande cohérence dans la mise en forme des fichiers finaux
+<!--  3456 -->- De plusieurs formats de sortie (HTML, PDF, Kindle...) avec un seul format d’entrée (Markdown ou HTML)
+<!--   456 -->- De pouvoir gérer les contributions des différents collaborateurs
+<!--    56 -->- D’automatiser certaines tâches
+<!--     6 -->- De gérer des documents volumineux
+
+</div>
+</section>
 
 
 
@@ -457,46 +475,6 @@ Le PFM est aussi appelé *“Pandoc’s extended Markdown”*
 
 
 
-
-<section>
-<!-- A -->
-# Exemple de conversion avec Pandoc{ class="en_tete" }
-<div style="font-size:40pt; left:15cm; width:50.0cm; top:4.5cm; column-count: 1">
-
-![](./images/exemple-conversion-pandoc-html.png){ height=30cm }
-
-</div>
-</section>
-
-
-
-
-
-
-<section>
-<!-- A -->
-# Ressources HTML{ class="en_tete" }
-<div style="font-size:48pt; left:5cm; width:50.0cm; top:7cm; column-count: 1">
-
-- W3School
-	- <http://www.w3schools.com/html/>
-- Mozilla
-	- <https://developer.mozilla.org/fr/docs/Web/HTML>
-- W3C
-	- Doctype XHTML1 : <https://www.w3.org/TR/xhtml1/>
-	- Doctype HTML5 : <https://www.w3.org/TR/html5/>
-	- Validation : <https://validator.w3.org/>
-
-</div>
-</section>
-
-
-
-
-
-
-
-
 <section>
 <!-- A -->
 # Exemple de CSS{ class="en_tete" }
@@ -509,6 +487,19 @@ Le PFM est aussi appelé *“Pandoc’s extended Markdown”*
 
 
 
+
+
+
+
+<section>
+<!-- A -->
+# Exemple de conversion avec Pandoc{ class="en_tete" }
+<div style="font-size:40pt; left:15cm; width:50.0cm; top:4.5cm; column-count: 1">
+
+![](./images/exemple-conversion-pandoc-html.png){ height=30cm }
+
+</div>
+</section>
 
 
 
@@ -608,23 +599,74 @@ Le PFM est aussi appelé *“Pandoc’s extended Markdown”*
 
 
 
+<section>
+<!-- A -->
+# Ressources HTML{ class="en_tete" }
+<div style="font-size:48pt; left:5cm; width:50.0cm; top:7cm; column-count: 1">
+
+- W3School
+	- <http://www.w3schools.com/html/>
+- Mozilla
+	- <https://developer.mozilla.org/fr/docs/Web/HTML>
+- W3C
+	- Doctype XHTML1 : <https://www.w3.org/TR/xhtml1/>
+	- Doctype HTML5 : <https://www.w3.org/TR/html5/>
+	- Validation : <https://validator.w3.org/>
+
+</div>
+</section>
+
+
+
+
+
+
+
+
+
+
+<section>
+<!-- A -->
+# Outil “pre-dia”{ class="en_tete" }
+<div style="font-size:48pt; left:2cm; width:28.0cm; top:6.5cm;">
+
+## Génération de dias pour les vidéos du MOOC LED
+
+<!-- 23 -->- Mode “Normal” ⇒ avec séquences
+<!--  3 -->- Mode “Compact” ⇒ sans séquences (applaties)
+
+</div>
+
+<div style="font-size:48pt; left:31cm; width:30.0cm; top:6.5cm;">
+
+<!-- 23 -->![](./images/exemple-pre-dia-1.png){ height=20cm }
+
+</div>
+</section>
+
+
+
+
+
+
+
 
 <section>
 <!-- A -->
 # Git{ class="en_tete" }
 <div style="font-size:48pt; left:5cm; width:50.0cm; top:6.5cm; column-count: 1">
 
-- SCM (Source Code Management) ⇒ Indispensable pour tout projet informatique
-	- Permet de gérer l’historique
-	- Permet de gérer la collaboration avec les participants
-- Exemples
-	- Git
-	- Perforce
-	- Mercurial
-	- Bazaar
-	- CVS
-	- Subversion
-	- [Liste de logiciels de SCM][2]
+<!-- 23 -->- SCM (Source Code Management) ⇒ Indispensable pour tout projet informatique
+<!-- 23 -->	- Permet de gérer l’historique
+<!-- 23 -->	- Permet de gérer la collaboration avec les participants
+<!--  3 -->- Exemples
+<!--  3 -->	- Git
+<!--  3 -->	- Perforce
+<!--  3 -->	- Mercurial
+<!--  3 -->	- Bazaar
+<!--  3 -->	- CVS
+<!--  3 -->	- Subversion
+<!--  3 -->	- [Liste de logiciels de SCM][2]
 
 </div>
 </section>
@@ -743,7 +785,7 @@ Le PFM est aussi appelé *“Pandoc’s extended Markdown”*
 
 <section>
 <!-- A -->
-# GitHub – flux de travail{ class="en_tete" }
+# GitHub – flux de travail (avec site web sur GitHub){ class="en_tete" }
 <div style="font-size:48pt; left:5cm; width:50.0cm; top:6cm; column-count: 1">
 
 # [Forking Workflow][1]
@@ -770,6 +812,52 @@ Le PFM est aussi appelé *“Pandoc’s extended Markdown”*
 	- “add+commit+push” les fichiers vers leur “fork”
 	- envoient des “pull request” au reponsable pour qu’il intègre les modifications
 	- synchronisent leurs “fork”
+
+</div>
+</section>
+
+
+
+
+
+
+
+<section>
+<!-- A -->
+# Exemples de sites web sur GitHub { class="en_tete" }
+<div style="font-size:48pt; left:5cm; width:50.0cm; top:7cm; column-count: 1">
+
+- <http://pyrochat.github.io/mooc-led/>
+	- <https://github.com/pyrochat/mooc-led>
+- <http://ouilogique.com/>
+	- <https://github.com/NicHub/ouilogique.com>
+- <http://cnl-naturopathie.ch/>
+	- <https://github.com/cnl-naturopathie/site-web-v4>
+- <http://getbootstrap.com/>
+	- <https://github.com/twbs/bootstrap>
+
+</div>
+</section>
+
+
+
+
+
+
+<section>
+<!-- A -->
+# Quelques outils pratiques { class="en_tete" }
+<div style="font-size:48pt; left:5cm; width:50.0cm; top:7cm; column-count: 1">
+
+- Sublime Text [sublimetext.com](https://www.sublimetext.com/)
+- Atom [atom.io](https://atom.io/)
+- Dterm [decimus.net/DTerm](http://decimus.net/DTerm)
+- Antidote [druide.com](http://www.druide.com/)
+- Le guide du typographe romand [typoguide.ch](http://www.typoguide.ch/)
+- Validation HTML [validator.w3.org](https://validator.w3.org/)
+- Image Optim [imageoptim.com](https://imageoptim.com/)
+- Marked 2 [marked2app.com](http://marked2app.com/)
+- Ukelele [scripts.sil.org](http://scripts.sil.org/cms/scripts/page.php?site_id=nrsi&id=ukelele)
 
 </div>
 </section>
